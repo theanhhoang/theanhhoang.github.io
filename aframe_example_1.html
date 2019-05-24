@@ -36,13 +36,12 @@
         position="0 0 0">
       </a-sound>
 
-      <a-box src="boxTexture" rotation="0 45 45" scale="1 1 1" position="0 2 -5"
+      <a-box src="#boxTexture" rotation="0 45 45" scale="1 1 1" position="0 2 -5"
         animation="property: object3D.position.y; to: 3; dir: alternate; dur: 2000; loop: true"
-        scale-on-mouseenter
-        ></a-box>
-        <!-- animation__mouseenter="property: scale; to: 2.3 2.3 2.3; dur: 300; startEvents: mouseenter"
-        animation__mouseleave="property: scale; to: 2 2 2; dur: 300; startEvents: mouseleave"></a-box> -->
-
+        animation__mouseenter="property: scale; to: 2 2 2; dur: 300; startEvents: mouseenter"
+        animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: mouseleave"></a-box>
+        <!-- scale-on-mouseenter -->
+      ></a-box>
 
 
 
