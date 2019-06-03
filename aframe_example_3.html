@@ -10,22 +10,22 @@
 <body>
 
 <script>
-AFRAME.registerComponent('updater', {
+  AFRAME.registerComponent('updater', {
 
-	init: function()
-	{
-		this.num = 0;
-		this.target = document.querySelector('#textArea');
-	},
+  	init: function()
+  	{
+  		this.num = 0;
+  		this.target = document.querySelector('#textArea');
+  	},
 
-	tick: function (time, timeDelta)
-	{
-		this.num += 1;
-		let t = Math.round(time/1000);
-		this.target.setAttribute("text-geometry", "value", "Seconds: " + t)
-	}
+  	tick: function (time, timeDelta)
+  	{
+  		this.num += 1;
+  		let t = Math.round(time/1000);
+  		this.target.setAttribute("text-geometry", "value", "Seconds: " + this.num)
+  	}
 
-});
+  });
 </script>
 
 <a-scene antialias="true">
