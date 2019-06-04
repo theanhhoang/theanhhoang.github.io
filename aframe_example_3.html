@@ -63,14 +63,14 @@
 
         <!-- timeline used to play animations in sequence -->
         <a-timeline id="myTimeline">
-          <a-timeline-animation select="#textArea" name="togglevisible"></a-timeline-animation>
-          <a-timeline-animation select="#textArea" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#textArea" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#textArea" name="togglevisibleoff"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
         </a-timeline>
 
         <a-mixin id="text"
-          text-geometry="align: center; color: #333; width: 6; opacity: 0"
+          text="align: center; color: #333; width: 6; opacity: 0"
           animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
           animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
@@ -97,7 +97,7 @@
     	</a-plane>
 
     	<a-entity
-    		id="textArea" mixin="text"
+    		id="textArea"
     		position="-1.5 2 -3"
     		text-geometry="font: #customFont;
     			size: 0.5;
@@ -107,10 +107,10 @@
 
     	></a-entity>
 
-    <!-- <a-entity
+    <a-entity
       id="text1" mixin="text" text="value: Is this real life?"
       position="-2 2 -3"
-    ></a-entity> -->
+    ></a-entity>
 
 
     	<!-- adding the updater last so it can get references to other entities -->
