@@ -3,8 +3,11 @@
 
 <head>
 	<title>A-Frame - 3D Text</title>
-	<script src="js/aframe/aframe-master.min.js"></script>
-	<script src="js/aframe/aframe-text-geometry-component.min.js"></script>
+  <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+
+	<!-- <script src="js/aframe/aframe-master.min.js"></script>
+	<script src="js/aframe/aframe-text-geometry-component.min.js"></script> -->
 
   <script src="js/aframe/aframe-animation-component.min.js"></script>
   <script src="js/aframe-animation-timeline-component.min.js"></script>
@@ -13,120 +16,120 @@
 
 </head>
 
-<body>
+  <body>
 
-<script>
-  AFRAME.registerComponent('updater', {
+  <script>
+    AFRAME.registerComponent('updater', {
 
-  	init: function()
-  	{
-  		// this.num = 0;
-  		this.target = document.querySelector('#textArea');
-      // this.countDownDate = new Date("Jun 30, 2019 00:00:00").getTime();
-      this.countDownDate = new Date().getTime() + 5000;
-  	},
+    	init: function()
+    	{
+    		// this.num = 0;
+    		this.target = document.querySelector('#textArea');
+        // this.countDownDate = new Date("Jun 30, 2019 00:00:00").getTime();
+        this.countDownDate = new Date().getTime() + 5000;
+    	},
 
-  	tick: function (time, timeDelta)
-  	{
-      // Get today's date and time
-      var now = new Date().getTime();
+    	tick: function (time, timeDelta)
+    	{
+        // Get today's date and time
+        var now = new Date().getTime();
 
-      // Find the distance between now and the count down date
-      var distance = this.countDownDate - now;
-
-
-
-      // If the count down is finished, write some text
-      if (distance < 0) {
-        this.target.setAttribute("text-geometry", "value", "EXPIRED");
-      }else {
-        // Time calculations for days, hours, minutes and seconds
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        this.target.setAttribute("text-geometry", "value", days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
-      }
+        // Find the distance between now and the count down date
+        var distance = this.countDownDate - now;
 
 
-  	}
 
-  });
-</script>
+        // If the count down is finished, write some text
+        if (distance < 0) {
+          this.target.setAttribute("text-geometry", "value", "EXPIRED");
+        }else {
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          this.target.setAttribute("text-geometry", "value", days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+        }
+
+
+    	}
+
+    });
+  </script>
 
 <!-- <a-scene animation-timeline__1="timeline: #myTimeline; loop: true"> -->
-<a-scene antialias="true">
-	<a-assets>
-		<img id="grid" src="images/border.png" crossorigin="anonymous" />
-		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
-		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
+  <a-scene antialias="true">
+    	<a-assets>
+    		<img id="grid" src="images/border.png" crossorigin="anonymous" />
+    		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
+    		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
 
-    <!-- timeline used to play animations in sequence -->
-    <!-- <a-timeline id="myTimeline">
-      <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
-      <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
-      <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
-      <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
-    </a-timeline>
+        <!-- timeline used to play animations in sequence -->
+        <!-- <a-timeline id="myTimeline">
+          <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
+        </a-timeline>
 
-    <a-mixin id="text"
-      text="align: center; color: #333; width: 6; opacity: 0"
-      animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
-      animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
-      animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
-      animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
-      position="0 2 -3"
-      visible="false">
-    </a-mixin> -->
+        <a-mixin id="text"
+          text="align: center; color: #333; width: 6; opacity: 0"
+          animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
+          animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
+          animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+          animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
+          position="0 2 -3"
+          visible="false">
+        </a-mixin> -->
 
-	</a-assets>
+    	</a-assets>
 
-	<a-sky
-		rotation = "0 0 0"
-		color = "#FFFFFF"
-		material = "src: #sky">
-	</a-sky>
+    	<a-sky
+    		rotation = "0 0 0"
+    		color = "#FFFFFF"
+    		material = "src: #sky">
+    	</a-sky>
 
-	<a-plane
-		width="100" height="100"
-		position=" 0.00 0.00 0.00"
-		rotation="-90 0 0"
-		color="#888888"
-		material="src: #grid; repeat:100 100; transparent: true; opacity: 0.75"
-		shadow="cast: false; receive: true">
-	</a-plane>
+    	<a-plane
+    		width="100" height="100"
+    		position=" 0.00 0.00 0.00"
+    		rotation="-90 0 0"
+    		color="#888888"
+    		material="src: #grid; repeat:100 100; transparent: true; opacity: 0.75"
+    		shadow="cast: false; receive: true">
+    	</a-plane>
 
-	<a-entity
-		id="textArea"
-		position="-1.5 2 -3"
-		text-geometry="font: #customFont;
-			size: 0.5;
-			height: 0.01;
-			value: Seconds: ?"
-		material="color: #AAAAFF;"
+    	<a-entity
+    		id="textArea"
+    		position="-1.5 2 -3"
+    		text-geometry="font: #customFont;
+    			size: 0.5;
+    			height: 0.01;
+    			value: Seconds: ?"
+    		material="color: #AAAAFF;"
 
-	></a-entity>
+    	></a-entity>
 
-  <!-- <a-entity id="text1" mixin="text" text="value: Is this real life?"></a-entity> -->
-  <!-- <a-box
-  id = "awesomeBox"
-  width = "2" height = "1" depth = "1"
-  position = "-10 0.5 -3"
-  rotation = "0 45 0"
-  scale = "1 1 1"
-  color = "#FF8800"
-  material = "src: #grid; transparent: true; opacity: 1.0;"
-  shadow = "cast: true; receive: true"
-  animation__shrink = "property: scale; dur: 2000; easing: easeInOutSine; from:1 1 1; to:0.01 0.01 0.01; autoplay: false;"
-  animation__setopacity0 = "property: material.opacity; dur: 10; easing: linear; from: 1; to: 0; autoplay: false"
-  animation__setscale111 = "property: scale; dur: 10; easing: linear; from: 0.01 0.01 0.01; to: 1 1 1; autoplay: false"
-  animation__fadein      = "property: material.opacity; dur: 2000; easing: linear; from:0; to:1; autoplay: false">
-</a-box> -->
+      <!-- <a-entity id="text1" mixin="text" text="value: Is this real life?"></a-entity> -->
+      <!-- <a-box
+      id = "awesomeBox"
+      width = "2" height = "1" depth = "1"
+      position = "-10 0.5 -3"
+      rotation = "0 45 0"
+      scale = "1 1 1"
+      color = "#FF8800"
+      material = "src: #grid; transparent: true; opacity: 1.0;"
+      shadow = "cast: true; receive: true"
+      animation__shrink = "property: scale; dur: 2000; easing: easeInOutSine; from:1 1 1; to:0.01 0.01 0.01; autoplay: false;"
+      animation__setopacity0 = "property: material.opacity; dur: 10; easing: linear; from: 1; to: 0; autoplay: false"
+      animation__setscale111 = "property: scale; dur: 10; easing: linear; from: 0.01 0.01 0.01; to: 1 1 1; autoplay: false"
+      animation__fadein      = "property: material.opacity; dur: 2000; easing: linear; from:0; to:1; autoplay: false">
+    </a-box> -->
 
 
-	<!-- adding the updater last so it can get references to other entities -->
-	<a-entity updater></a-entity>
+    	<!-- adding the updater last so it can get references to other entities -->
+    	<a-entity updater></a-entity>
 
-</a-scene>
-</body>
+    </a-scene>
+  </body>
 </html>
