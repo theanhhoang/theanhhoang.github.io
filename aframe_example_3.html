@@ -5,6 +5,10 @@
 	<title>A-Frame - 3D Text</title>
 	<script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
 	<script src="https://unpkg.com/aframe-text-geometry-component@^0.5.0/dist/aframe-text-geometry-component.min.js"></script>
+
+  <script src="https://unpkg.com/aframe-animation-component@^4.1.1/dist/aframe-animation-timeline-component.min.js"></script>
+  <script src="https://unpkg.com/aframe-animation-timeline-component@1.6.0/dist/aframe-animation-timeline-component.min.js"></script>
+
 </head>
 
 <body>
@@ -48,12 +52,21 @@
   });
 </script>
 
-<a-scene antialias="true">
+<a-scene antialias="true" animation-timeline__1="timeline: #myTimeline; loop: true">
 
 	<a-assets>
 		<img id="grid" src="images/border.png" crossorigin="anonymous" />
 		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
 		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
+
+    <!-- timeline used to play animations in sequence -->
+    <a-timeline id="myTimeline">
+      <a-timeline-animation select="#textArea" name="shrink"></a-timeline-animation>
+      <a-timeline-animation select="#textArea" name="setopacity0"></a-timeline-animation>
+      <a-timeline-animation select="#textArea" name="setscale111"></a-timeline-animation>
+      <a-timeline-animation select="#textArea" name="fadein"></a-timeline-animation>
+    </a-timeline>
+
 	</a-assets>
 
 	<a-sky
@@ -78,8 +91,15 @@
 			size: 0.5;
 			height: 0.01;
 			value: Seconds: ?"
-		material="color: #AAAAFF;">
-	</a-entity>
+		material="color: #AAAAFF;"
+
+    shadow = "cast: true; receive: true"
+    animation__shrink = "property: scale; dur: 2000; easing: easeInOutSine; from:1 1 1; to:0.01 0.01 0.01; autoplay: false;"
+    animation__setopacity0 = "property: material.opacity; dur: 10; easing: linear; from: 1; to: 0; autoplay: false"
+    animation__setscale111 = "property: scale; dur: 10; easing: linear; from: 0.01 0.01 0.01; to: 1 1 1; autoplay: false"
+    animation__fadein      = "property: material.opacity; dur: 2000; easing: linear; from:0; to:1; autoplay: false">
+
+	></a-entity>
 
 	<!-- adding the updater last so it can get references to other entities -->
 	<a-entity updater></a-entity>
