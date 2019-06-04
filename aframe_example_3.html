@@ -85,13 +85,17 @@
 	</a-plane>
 
 	<a-entity
-		id="textArea"
+		<!-- id="textArea"
 		position="-1.5 2 -3"
-		<!-- text-geometry="font: #customFont;
+		text-geometry="font: #customFont;
 			size: 0.5;
 			height: 0.01;
-			value: Seconds: ?" -->
-		material="color: #AAAAFF;"
+			value: Seconds: ?"
+		material="color: #AAAAFF;" -->
+    id="textArea"
+    position="0 1.5 -2"
+    geometry="primitive: plane; width: 3; height:auto"
+    material="color: #444444; transparent: true; opacity: 0.80;"
 
     text="anchor: center; baseline: center; wrapCount: 20;
 				transparent: true; opacity: 0.90; color: #AAAAFF;
