@@ -61,10 +61,10 @@
 
     <!-- timeline used to play animations in sequence -->
     <a-timeline id="myTimeline">
-      <a-timeline-animation select="#awesomeBox" name="shrink"></a-timeline-animation>
-			<a-timeline-animation select="#awesomeBox" name="setopacity0"></a-timeline-animation>
-			<a-timeline-animation select="#awesomeBox" name="setscale111"></a-timeline-animation>
-			<a-timeline-animation select="#awesomeBox" name="fadein"></a-timeline-animation>
+      <a-timeline-animation select="#textArea" name="shrink"></a-timeline-animation>
+			<a-timeline-animation select="#textArea" name="setopacity0"></a-timeline-animation>
+			<a-timeline-animation select="#textArea" name="setscale111"></a-timeline-animation>
+			<a-timeline-animation select="#textArea" name="fadein"></a-timeline-animation>
     </a-timeline>
 
 	</a-assets>
@@ -94,15 +94,15 @@
 		material="color: #AAAAFF;"
 
     <!-- shadow = "cast: true; receive: true" -->
-    <!-- animation__shrink = "property: scale; dur: 2000; easing: easeInOutSine; from:1 1 1; to:0.01 0.01 0.01; autoplay: false;"
+    animation__shrink = "property: scale; dur: 2000; easing: easeInOutSine; from:1 1 1; to:0.01 0.01 0.01; autoplay: false;"
     animation__setopacity0 = "property: material.opacity; dur: 10; easing: linear; from: 1; to: 0; autoplay: false"
     animation__setscale111 = "property: scale; dur: 10; easing: linear; from: 0.01 0.01 0.01; to: 1 1 1; autoplay: false"
-    animation__fadein      = "property: material.opacity; dur: 2000; easing: linear; from:0; to:1; autoplay: false" -->
+    animation__fadein      = "property: material.opacity; dur: 2000; easing: linear; from:0; to:1; autoplay: false"
 
 	></a-entity>
 
 
-  <a-box
+  <!-- <a-box
   id = "awesomeBox"
   width = "2" height = "1" depth = "1"
   position = "-10 0.5 -3"
@@ -115,7 +115,7 @@
   animation__setopacity0 = "property: material.opacity; dur: 10; easing: linear; from: 1; to: 0; autoplay: false"
   animation__setscale111 = "property: scale; dur: 10; easing: linear; from: 0.01 0.01 0.01; to: 1 1 1; autoplay: false"
   animation__fadein      = "property: material.opacity; dur: 2000; easing: linear; from:0; to:1; autoplay: false">
-</a-box>
+</a-box> -->
 
 
 	<!-- adding the updater last so it can get references to other entities -->
