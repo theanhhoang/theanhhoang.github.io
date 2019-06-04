@@ -16,8 +16,8 @@
   	{
   		// this.num = 0;
   		this.target = document.querySelector('#textArea');
-      this.countDownDate = new Date("Jun 30, 2019 00:00:00").getTime();
-
+      // this.countDownDate = new Date("Jun 30, 2019 00:00:00").getTime();
+      this.countDownDate = new Date().getTime() + 5000;
   	},
 
   	tick: function (time, timeDelta)
