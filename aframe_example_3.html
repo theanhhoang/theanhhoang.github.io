@@ -54,7 +54,7 @@
   });
 </script>
 
-<a-scene antialias="true" animation-timeline__1="timeline: #myTimeline; loop: true">
+<a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
 
 	<a-assets>
 		<img id="grid" src="images/border.png" crossorigin="anonymous" />
@@ -68,6 +68,16 @@
       <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
       <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
     </a-timeline>
+
+    <a-mixin id="text"
+      text="align: center; color: #333; width: 6; opacity: 0"
+      animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
+      animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
+      animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
+      animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
+      position="0 2 -3"
+      visible="false">
+    </a-mixin>
 
 	</a-assets>
 
