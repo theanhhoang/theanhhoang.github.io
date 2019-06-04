@@ -21,7 +21,7 @@
     	init: function()
     	{
     		// this.num = 0;
-    		this.target = document.querySelector('#textArea');
+    		this.target = document.querySelector('#text1');
         // this.countDownDate = new Date("Jun 30, 2019 00:00:00").getTime();
         this.countDownDate = new Date().getTime() + 5000;
     	},
@@ -38,14 +38,14 @@
 
         // If the count down is finished, write some text
         if (distance < 0) {
-          this.target.setAttribute("text-geometry", "value", "EXPIRED");
+          this.target.setAttribute("text", "value", "EXPIRED");
         }else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          this.target.setAttribute("text-geometry", "value", days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+          this.target.setAttribute("text", "value", days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
         }
 
 
@@ -70,7 +70,7 @@
         </a-timeline>
 
         <a-mixin id="text"
-          text="align: center; color: #333; width: 6; opacity: 0"
+          text="align: center; color: #AAAAFF; width: 6; opacity: 0"
           animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
           animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
           animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
@@ -96,7 +96,7 @@
     		shadow="cast: false; receive: true">
     	</a-plane>
 
-    	<a-entity
+    	<!-- <a-entity
     		id="textArea"
     		position="-1.5 2 -3"
     		text-geometry="font: #customFont;
@@ -105,11 +105,11 @@
     			value: Seconds: ?"
     		material="color: #AAAAFF;"
 
-    	></a-entity>
+    	></a-entity> -->
 
     <a-entity
-      id="text1" mixin="text" text="value: Is this real life?"
-      position="-3 2 -3"
+      id="text1" mixin="text" text="value: Seconds: ?"
+      position="-1 2 -3"
     ></a-entity>
 
 
