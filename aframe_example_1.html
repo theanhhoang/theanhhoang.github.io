@@ -16,18 +16,18 @@
           var data = this.data;
           this.el.addEventListener('mouseenter', function () {
             console.log('mouseenter:');
-            console.log(data);
+            console.log(this.el.object3D.scale);
 
             // this.el.object3D.scale.copy(data.to);
-            this.el.setAttribute('scale', data.to);
+            // this.el.setAttribute('scale', data.to);
           });
 
           this.el.addEventListener('mouseleave', function () {
             console.log('mouseleave:');
-            console.log(data);
+            console.log(this.el.object3D.scale);
 
             // this.el.object3D.scale.copy(data.from);
-            this.el.setAttribute('scale', data.from);
+            // this.el.setAttribute('scale', data.from);
           });
         }
       });
