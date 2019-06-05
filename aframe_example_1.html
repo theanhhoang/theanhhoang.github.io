@@ -14,13 +14,17 @@
 
         init: function () {
           var data = this.data;
-          // console('Data Here:')
-          // console.log(data);
           this.el.addEventListener('mouseenter', function () {
+            console('mouseenter:')
+            console.log(data);
+
             this.el.object3D.scale.copy(data.to);
           });
 
           this.el.addEventListener('mouseleave', function () {
+            console('mouseleave:')
+            console.log(data);
+
             this.el.object3D.scale.copy(data.from);
           });
         }
