@@ -16,15 +16,16 @@
           var data = this.data;
           console.log('init:');
           console.log(this.el);
-          this.el.addEventListener('mouseenter', function (this) {
+          var test = this.el
+          this.el.addEventListener('mouseenter', function () {
             console.log('mouseenter:');
-            console.log(this.el);
+            console.log(test);
 
             // this.el.object3D.scale.copy(data.to);
             // this.el.setAttribute('scale', data.to);
           });
 
-          this.el.addEventListener('mouseleave', function (this) {
+          this.el.addEventListener('mouseleave', function () {
             console.log('mouseleave:');
             console.log(this.el);
 
