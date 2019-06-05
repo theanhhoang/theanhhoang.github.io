@@ -120,6 +120,23 @@
           visible="false">
         </a-mixin>
 
+
+				<img id="city-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
+				<img id="cubes-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
+				<img id="sechelt-thumb" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+
+
+
+				<!-- Image link template to be reused. -->
+				<script id="link" type="text/html">
+					<a-entity class="link"
+						geometry="primitive: plane; height: 1; width: 1"
+						material="shader: flat; src: ${thumb}"
+						event-set__mouseenter="scale: 1.2 1.2 1"
+						event-set__mouseleave="scale: 1 1 1"
+					></a-entity>
+				</script>
+
     	</a-assets>
 
     	<a-sky
@@ -175,6 +192,13 @@
       id="text1" mixin="text" text="value: Is this real life?"
       position="-2 2 -3"
     ></a-entity>
+
+
+		<a-entity id="links" layout="type: line; margin: 1.5" position="0 -1 2">
+			<a-entity template="src: #link"  data-thumb="#cubes-thumb"></a-entity>
+			<a-entity template="src: #link"  data-thumb="#city-thumb"></a-entity>
+			<a-entity template="src: #link"  data-thumb="#sechelt-thumb"></a-entity>
+		</a-entity>
 
 
     	<!-- adding the updater last so it can get references to other entities -->
