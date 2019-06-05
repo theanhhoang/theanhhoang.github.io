@@ -16,7 +16,7 @@
           var data = this.data;
           console.log('init:');
           console.log(this.el);
-          this.el.addEventListener('mouseenter', function () {
+          this.el.addEventListener('mouseenter', function (this) {
             console.log('mouseenter:');
             console.log(this.el);
 
@@ -24,7 +24,7 @@
             // this.el.setAttribute('scale', data.to);
           });
 
-          this.el.addEventListener('mouseleave', function () {
+          this.el.addEventListener('mouseleave', function (this) {
             console.log('mouseleave:');
             console.log(this.el);
 
