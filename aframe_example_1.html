@@ -8,29 +8,21 @@
     <script>
       AFRAME.registerComponent('scale-on-mouseenter', {
         schema: {
-          to: {default: {x: 3.5, y: 3.5, z: 3.5}, type: "vec3"},
-          from: {default: {x: 1.5, y: 1.5, z: 1.5}, type: "vec3"}
+          to: {default: {x: 3.5, y: 2.5, z: 1.5}, type: "vec3"},
+          from: {default: {x: 0.5, y: 0.5, z: 0.5}, type: "vec3"}
         },
 
         init: function () {
           var data = this.data;
-          console.log('init:');
-          console.log(this.el);
-          var test = this.el;
+          var el = this.el;
           this.el.addEventListener('mouseenter', function () {
-            console.log('mouseenter:');
-            console.log(test);
 
-            test.object3D.scale.copy(data.to);
-            // this.el.setAttribute('scale', data.to);
+            el.object3D.scale.copy(data.to);
           });
 
           this.el.addEventListener('mouseleave', function () {
-            console.log('mouseleave:');
-            console.log(this.el);
 
-            test.object3D.scale.copy(data.from);
-            // this.el.setAttribute('scale', data.from);
+            el.object3D.scale.copy(data.from);
           });
         }
       });
