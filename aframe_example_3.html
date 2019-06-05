@@ -29,6 +29,10 @@
 				this.target2 = document.querySelector('#textArea2');
 
 				this.target3 = document.querySelector('#text');
+
+
+				this.target4 = document.querySelector('#boxTexture');
+
     	},
 
     	tick: function (time, timeDelta)
@@ -48,6 +52,9 @@
 					this.target2.setAttribute('visible', true );
 
 					this.target3.setAttribute('visible', true );
+
+					this.target4.setAttribute('visible', true );
+
         }else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -95,7 +102,7 @@
 				<img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous">
 
 
-    		<img id="grid" src="images/aframe/border.png" crossorigin="anonymous" />
+    		<!-- <img id="grid" src="images/border.png" crossorigin="anonymous" /> -->
     		<img id="sky" src="images/aframe/beach.jpg" crossorigin="anonymous" />
     		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
 
@@ -133,8 +140,9 @@
 			<a-box src="#boxTexture"
 				rotation="0 45 45"
 				scale="1 1 1"
-				position="0 2 -5"
+				position="5 2 -5"
 				animation="property: object3D.position.y; to: 3; dir: alternate; dur: 2000; loop: true"
+				visible="false"
 				scale-on-mouseenter
 			></a-box>
 
