@@ -16,12 +16,12 @@
           var data = this.data;
           console.log('init:');
           console.log(this.el);
-          var test = this.el
+          var test = this.el;
           this.el.addEventListener('mouseenter', function () {
             console.log('mouseenter:');
             console.log(test);
 
-            // this.el.object3D.scale.copy(data.to);
+            test.object3D.scale.copy(data.to);
             // this.el.setAttribute('scale', data.to);
           });
 
@@ -29,7 +29,7 @@
             console.log('mouseleave:');
             console.log(this.el);
 
-            // this.el.object3D.scale.copy(data.from);
+            test.object3D.scale.copy(data.from);
             // this.el.setAttribute('scale', data.from);
           });
         }
