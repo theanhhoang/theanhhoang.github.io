@@ -8,8 +8,8 @@
     <script>
       AFRAME.registerComponent('scale-on-mouseenter', {
         schema: {
-          from: {default: '2 2 2', type: 'vec3'},
-          to: {default: '4 4 4', type: 'vec3'}
+          from: {default: '2.0 2.0 2.0', type: 'vec3'},
+          to: {default: '4.0 4.0 4.0', type: 'vec3'}
         },
 
         init: function () {
@@ -30,8 +30,8 @@
     <a-scene>
 
       <a-assets>
-        <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg">
-        <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+        <img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg" crossorigin="anonymous">
+        <img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous">
         <!-- <audio src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay preload></audio> -->
       </a-assets>
       <a-sound src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav" autoplay="true"
