@@ -61,11 +61,40 @@
     	}
 
     });
+
+
+
+
+		AFRAME.registerComponent('scale-on-mouseenter', {
+			schema: {
+				to: {default: {x: 3.5, y: 2.5, z: 1.5}, type: "vec3"},
+				from: {default: {x: 0.5, y: 0.5, z: 0.5}, type: "vec3"}
+			},
+
+			init: function () {
+				var data = this.data;
+				var el = this.el;
+				this.el.addEventListener('mouseenter', function () {
+
+					el.object3D.scale.copy(data.to);
+				});
+
+				this.el.addEventListener('mouseleave', function () {
+
+					el.object3D.scale.copy(data.from);
+				});
+			}
+		});
+
   </script>
 
 <a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
   <!-- <a-scene antialias="true"> -->
     	<a-assets>
+				<img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg" crossorigin="anonymous">
+				<img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous">
+
+
     		<img id="grid" src="images/aframe/border.png" crossorigin="anonymous" />
     		<img id="sky" src="images/aframe/beach.jpg" crossorigin="anonymous" />
     		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
@@ -100,6 +129,15 @@
     		material="src: #grid; repeat:100 100; transparent: true; opacity: 0.75"
     		shadow="cast: false; receive: true">
     	</a-plane> -->
+
+			<a-box src="#boxTexture"
+				rotation="0 45 45"
+				scale="1 1 1"
+				position="0 2 -5"
+				animation="property: object3D.position.y; to: 3; dir: alternate; dur: 2000; loop: true"
+				scale-on-mouseenter
+			></a-box>
+
 
     	<a-entity
     		id="textArea"
