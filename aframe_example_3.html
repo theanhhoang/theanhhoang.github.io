@@ -24,6 +24,9 @@
     		this.target = document.querySelector('#textArea');
         // this.countDownDate = new Date("Jun 30, 2019 00:00:00").getTime();
         this.countDownDate = new Date().getTime() + 5000;
+
+
+				this.target2 = document.querySelector('#textArea2');
     	},
 
     	tick: function (time, timeDelta)
@@ -39,6 +42,8 @@
         // If the count down is finished, write some text
         if (distance < 0) {
           this.target.setAttribute("text-geometry", "value", "EXPIRED");
+
+					this.target2.setAttribute('visible', true );
         }else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -110,13 +115,13 @@
 
 			<a-entity
 				id="textArea2"
-				position="-1.5 6 -3"
+				position="-1.5 3 -3"
 				text-geometry="font: #customFont;
 					size: 0.5;
 					height: 0.01;
 					value: OK OK"
 				material="color: #AAAAFF;"
-				visible="true"
+				visible="false"
 			></a-entity>
 
     <a-entity
