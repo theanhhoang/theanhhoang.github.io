@@ -8,8 +8,8 @@
     <script>
       AFRAME.registerComponent('scale-on-mouseenter', {
         schema: {
-          to: {default: "3.5 3.5 3.5", type: "vec3"},
-          from: {default: "1.5 1.5 1.5", type: "vec3"}
+          to: {default: {x: 3.5, y: 3.5, z: 3.5}, type: "vec3"},
+          from: {default: {x: 1.5, y: 1.5, z: 1.5}, type: "vec3"}
         },
 
         init: function () {
