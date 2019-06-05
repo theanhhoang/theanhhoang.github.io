@@ -27,6 +27,8 @@
 
 
 				this.target2 = document.querySelector('#textArea2');
+
+				this.target3 = document.querySelector('#text');
     	},
 
     	tick: function (time, timeDelta)
@@ -44,6 +46,8 @@
           this.target.setAttribute("text-geometry", "value", "EXPIRED");
 
 					this.target2.setAttribute('visible', true );
+
+					this.target3.setAttribute('visible', true );
         }else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -70,16 +74,12 @@
         <a-timeline id="myTimeline">
           <a-timeline-animation select="#text1" name="togglevisible"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
-          <a-timeline-animation select="#text1" name="togglevisibleoff"></a-timeline-animation>
         </a-timeline>
 
         <a-mixin id="text"
-          text="align: center; color: #333; width: 6; opacity: 0"
+          text="align: center; color: #AAAAFF; width: 6; opacity: 0"
           animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
           animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
-          animation__togglevisible="property: visible; from: false; to: true; dur: 1; autoplay: false"
-          animation__togglevisibleoff="property: visible; from: true; to: false; dur: 1; autoplay: false"
           position="-10 2 -3"
           visible="false">
         </a-mixin>
