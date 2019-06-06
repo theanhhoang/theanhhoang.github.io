@@ -143,6 +143,11 @@
 					></a-entity>
 				</script>
 
+
+
+
+				<a-asset-item id="cesium" src="images/aframe/CesiumMan.gltf"></a-asset-item>
+
     	</a-assets>
 
     	<a-sky
@@ -210,6 +215,13 @@
 			<a-entity template="src: #link"  data-thumb="#sechelt-thumb"></a-entity>
 		</a-entity>
 
+
+
+
+		<a-entity gltf-model="#cesium"
+			position="-3 2 -2"
+
+		></a-entity>
 
     	<!-- adding the updater last so it can get references to other entities -->
     	<a-entity updater></a-entity>
