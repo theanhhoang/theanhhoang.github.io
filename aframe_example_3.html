@@ -17,6 +17,9 @@
 	<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
 	<script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
 
+	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
+
+
 </head>
 
   <body>
@@ -220,7 +223,7 @@
 
 		<a-entity gltf-model="#cesium"
 			position="-3 2 -2"
-
+			animation-mixer
 		></a-entity>
 
     	<!-- adding the updater last so it can get references to other entities -->
