@@ -7,14 +7,12 @@
 <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
 
   <body style='margin : 0px; overflow: hidden;'>
-    <a-assets>
-      <a-asset-item id="cesium" src="images/CesiumMan.glb"></a-asset-item>
-    </a-assets>
-
-
-
 
     <a-scene embedded arjs>
+      <a-assets>
+        <a-asset-item id="cesium" src="images/CesiumMan.glb"></a-asset-item>
+      </a-assets>
+
       <a-marker preset="hiro">
           <!-- <a-box position='0 0.5 0' material='color: yellow;'></a-box> -->
 
