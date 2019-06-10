@@ -151,6 +151,8 @@
 
 				<a-asset-item id="cesium" src="images/aframe/2.glb"></a-asset-item>
 
+				<a-asset-item id="play_button" src="images/aframe/play_button/model.gltf"></a-asset-item>
+				<a-asset-item id="pause_button" src="images/aframe/pause_button/model.gltf"></a-asset-item>
     	</a-assets>
 
     	<a-sky
@@ -208,7 +210,7 @@
     ></a-entity>
 
 
-		<a-entity id="links" layout="type: circle; margin: 0.5; radius: 1" position="4 2 -2">
+		<!-- <a-entity id="links" layout="type: circle; margin: 0.5; radius: 1" position="4 2 -2">
 			<a-entity template="src: #link"  data-thumb="#cubes-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#city-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#sechelt-thumb"></a-entity>
@@ -216,12 +218,12 @@
 			<a-entity template="src: #link"  data-thumb="#cubes-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#city-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#sechelt-thumb"></a-entity>
-		</a-entity>
+		</a-entity> -->
 
 
 
 
-		<a-entity gltf-model="#cesium"
+		<!-- <a-entity gltf-model="#cesium"
 			rotation="0 180 0"
 			position="0 0 2"
 			animation-mixer
@@ -250,11 +252,18 @@
 			rotation="0 180 0"
 			position="-4 0 6"
 			animation-mixer
+		></a-entity> -->
+
+
+
+		<a-entity gltf-model="#play_button"
+			rotation="0 180 0"
+			position="2 0 2"
 		></a-entity>
-
-
-
-
+		<a-entity gltf-model="#pause_button"
+			rotation="0 180 0"
+			position="-2 0 2"
+		></a-entity>
 
 
 
