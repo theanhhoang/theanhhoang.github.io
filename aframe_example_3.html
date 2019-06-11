@@ -102,6 +102,29 @@
 			}
 		});
 
+
+		AFRAME.registerComponent('play_pause_sound', {
+			schema: {
+				to: {default: {x: 3.5, y: 3.5, z: 3.5}, type: "vec3"},
+				from: {default: {x: 2, y: 2, z: 2}, type: "vec3"}
+			},
+
+			init: function () {
+				var data = this.data;
+				var el = this.el;
+				this.el.addEventListener('mouseenter', function () {
+
+					el.object3D.scale.copy(data.to);
+				});
+
+				this.el.addEventListener('mouseleave', function () {
+
+					el.object3D.scale.copy(data.from);
+				});
+			}
+		});
+
+
   </script>
 
 <a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
@@ -153,6 +176,11 @@
 
 				<a-asset-item id="play_button" src="images/aframe/play_button/model.gltf"></a-asset-item>
 				<a-asset-item id="pause_button" src="images/aframe/pause_button/model.gltf"></a-asset-item>
+
+
+				<audio id="em_oi" src="audio/Em_Oi.mp3" preload="auto"></audio>
+
+
     	</a-assets>
 
     	<a-sky
@@ -260,11 +288,13 @@
 			rotation="90 -10 0"
 			position="1 0 -3"
 			scale="2 2 2"
+			play_pause_sound
 		></a-entity>
 		<a-entity gltf-model="#pause_button"
 			rotation="90 10 0"
 			position="-1 0 -3"
 			scale="2 2 2"
+			play_pause_sound
 		></a-entity>
 
 
@@ -298,7 +328,7 @@
 			<a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="0.5" position="-3 2 -2"></a-light>
 
-			<a-sound src="audio/Em_Oi.mp3" autoplay="true"></a-sound>
+			<a-entity sound="src: #em_oi"></a-entity>
 
     </a-scene>
   </body>
