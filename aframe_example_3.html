@@ -113,12 +113,12 @@
 				var data = this.data;
 				var el = this.el;
 				this.el.addEventListener('mouseenter', function () {
-
+					console.log("zoom in");
 					el.object3D.scale.copy(data.to);
 				});
 
 				this.el.addEventListener('mouseleave', function () {
-
+					console.log("zoom in");
 					el.object3D.scale.copy(data.from);
 				});
 			}
