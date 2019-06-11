@@ -107,7 +107,9 @@
 			init: function () {
 				var el = this.el;
 				this.el.addEventListener('click', function () {
-					console.log("play sound");
+					// console.log("play sound");
+					var entity = document.querySelector('[sound]');
+					entity.components.sound.playSound();
 				});
 			}
 		});
@@ -116,7 +118,9 @@
 			init: function () {
 				var el = this.el;
 				this.el.addEventListener('click', function () {
-					console.log("pause sound");
+					// console.log("pause sound");
+					var entity = document.querySelector('[sound]');
+					entity.components.sound.pauseSound();
 				});
 			}
 		});
