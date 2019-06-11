@@ -27,6 +27,10 @@
   <script>
 
 		var audio = new Audio("audio/Em_Oi.mp3");
+		audio.addEventListener('ended', function() {
+		    this.currentTime = 0;
+		    this.play();
+		}, false);
 		var audio_playing = false;
     AFRAME.registerComponent('updater', {
 
