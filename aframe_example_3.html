@@ -115,6 +115,7 @@
 					// entity.components.sound.playSound();
 					if (!audio_playing){
 						audio.play();
+						audio_playing = !audio_playing;
 					}
 				});
 			}
@@ -129,6 +130,7 @@
 					// entity.components.sound.pauseSound();
 					if (audio_playing){
 						audio.pause();
+						audio_playing = !audio_playing;
 					}
 
 				});
