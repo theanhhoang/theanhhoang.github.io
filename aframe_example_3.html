@@ -42,7 +42,7 @@
         this.countDownDate = new Date().getTime() + 5000;
 
 
-				this.target2 = document.querySelector('#textArea2');
+				this.target2 = document.querySelector('#heart_obj');
 
 				this.target3 = document.querySelector('#text');
 
@@ -195,7 +195,9 @@
 				<a-asset-item id="pause_button" src="images/aframe/pause_button/model.gltf"></a-asset-item>
 
 
-				<!-- <audio id="em_oi" src="audio/Em_Oi.mp3" preload="auto"></audio> -->
+				<a-asset-item id="heart-obj" src="images/aframe/Heart/Heart.obj"></a-asset-item>
+				<a-asset-item id="heart-mtl" src="images/aframe/Heart/Heart.mtl"></a-asset-item>
+
 
 
     	</a-assets>
@@ -238,7 +240,7 @@
     	></a-entity>
 
 
-			<a-entity
+			<!-- <a-entity
 				id="textArea2"
 				position="-1.5 3 -3"
 				text-geometry="font: #customFont;
@@ -246,6 +248,13 @@
 					height: 0.01;
 					value: OK OK"
 				material="color: #AAAAFF;"
+				visible="false"
+			></a-entity> -->
+
+			<a-entity
+				id="heart_obj"
+				position="-1.5 3 -3"
+				obj-model="obj: #heart-obj; mtl: #heart-mtl"
 				visible="false"
 			></a-entity>
 
@@ -255,14 +264,14 @@
     ></a-entity>
 
 
-		<a-entity id="links1" layout="type: line; margin: 0.5; radius: 1" position="-4 2 2" rotation="0 90 0">
+		<a-entity id="links1" layout="type: line; margin: 2; radius: 1" position="-4 2 2" rotation="0 90 0">
 			<a-entity template="src: #link"  data-thumb="#cubes-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#city-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#sechelt-thumb"></a-entity>
 		</a-entity>
 
 
-		<a-entity id="links2" layout="type: line; margin: 0.5; radius: 1" position="4 2 2" rotation="0 -90 0">
+		<a-entity id="links2" layout="type: line; margin: 2; radius: 1" position="4 2 2" rotation="0 -90 0">
 			<a-entity template="src: #link"  data-thumb="#cubes-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#city-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#sechelt-thumb"></a-entity>
