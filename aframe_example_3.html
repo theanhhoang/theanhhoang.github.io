@@ -121,8 +121,8 @@
 
 		AFRAME.registerComponent('scale-on-mouseenter', {
 			schema: {
-				to: {default: {x: 3.5, y: 2.5, z: 1.5}, type: "vec3"},
-				from: {default: {x: 0.5, y: 0.5, z: 0.5}, type: "vec3"}
+				to: {default: {x: 2, y: 2, z: 2}, type: "vec3"},
+				from: {default: {x: 1, y: 1, z: 1}, type: "vec3"}
 			},
 
 			init: function () {
@@ -222,8 +222,15 @@
 
 				<a-asset-item id="cesium" src="images/aframe/2.glb"></a-asset-item>
 
-				<a-asset-item id="play_button" src="images/aframe/play_button/model.gltf"></a-asset-item>
-				<a-asset-item id="pause_button" src="images/aframe/pause_button/model.gltf"></a-asset-item>
+				<!-- <a-asset-item id="play_button" src="images/aframe/play_button/model.gltf"></a-asset-item>
+				<a-asset-item id="pause_button" src="images/aframe/pause_button/model.gltf"></a-asset-item> -->
+
+				<a-asset-item id="play-obj" src="images/aframe/play_button/model.obj"></a-asset-item>
+				<a-asset-item id="play-mtl" src="images/aframe/play_button/materials.mtl"></a-asset-item>
+
+				<a-asset-item id="pause-obj" src="images/aframe/pause_button/model.obj"></a-asset-item>
+				<a-asset-item id="pause-mtl" src="images/aframe/pause_button/materials.mtl"></a-asset-item>
+
 
 
 				<a-asset-item id="heart-obj" src="images/aframe/Heart/Heart.obj"></a-asset-item>
@@ -347,17 +354,21 @@
 
 
 
-		<a-entity gltf-model="#play_button"
+		<a-entity obj-model="obj: #play-obj; mtl: #play-mtl"
+			id = "play_button"
 			rotation="90 -10 0"
 			position="1 0 -3"
 			scale="2 2 2"
 			play_sound
+			scale-on-mouseenter
 		></a-entity>
-		<a-entity gltf-model="#pause_button"
+		<a-entity obj-model="obj: #pause-obj; mtl: #pause-mtl"
+			id = "pause_button"
 			rotation="90 10 0"
 			position="-1 0 -3"
 			scale="2 2 2"
 			pause_sound
+			scale-on-mouseenter
 		></a-entity>
 
 
