@@ -311,7 +311,7 @@
 		</a-entity>
 
 
-		<a-entity id="links2" layout="type: line; margin: 2; radius: 1" position="4 2 2" rotation="0 -90 0">
+		<a-entity id="links2" layout="type: line; margin: 2; radius: 1" position="4 2 2" rotation="0 -90 0" reverse="true">
 			<a-entity template="src: #link"  data-thumb="#cubes-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#city-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#sechelt-thumb"></a-entity>
@@ -361,6 +361,7 @@
 			play_sound
 			scale-on-mouseenter
 			material="color: #ffffff;"
+			animation="property: rotation; to: 0 0 360; loop: true; dur: 10000"
 		></a-entity>
 		<a-entity obj-model="obj: #pause-obj; mtl: #pause-mtl"
 			id = "pause_button"
