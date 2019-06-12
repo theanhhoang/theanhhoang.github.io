@@ -121,8 +121,8 @@
 
 		AFRAME.registerComponent('scale-on-mouseenter', {
 			schema: {
-				to: {default: {x: 2, y: 2, z: 2}, type: "vec3"},
-				from: {default: {x: 1, y: 1, z: 1}, type: "vec3"}
+				to: {default: {x: 4, y: 4, z: 4}, type: "vec3"},
+				from: {default: {x: 2, y: 2, z: 2}, type: "vec3"}
 			},
 
 			init: function () {
@@ -262,7 +262,6 @@
 				position="5 2 -5"
 				animation="property: object3D.position.y; to: 3; dir: alternate; dur: 2000; loop: true"
 				visible="false"
-				scale-on-mouseenter
 			></a-box>
 
 
