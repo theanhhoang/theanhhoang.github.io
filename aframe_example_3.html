@@ -86,6 +86,38 @@
     });
 
 
+		var tick_counter = 0;
+		var scale_up = true;
+		AFRAME.registerComponent('scale_periodic', {
+			schema: {
+				to: {default: {x: 0.02, y: 0.02, z: 0.02}, type: "vec3"},
+				from: {default: {x: 0.01, y: 0.01, z: 0.01}, type: "vec3"}
+			},
+    	init: function()
+    	{
+    		this.num = 0;
+    	},
+
+    	tick: function (time, timeDelta)
+    	{
+				var data = this.data;
+				var el = this.el;
+        if (tick_counter === 1000) {
+					if (scale_up){
+						console.log(scale_up);
+						el.object3D.scale.copy(data.to);
+					}else {
+						console.log(scale_up);
+						el.object3D.scale.copy(data.from);
+					}
+					scale_up = !scale_up;
+        }
+
+				tick_counter++;
+    	}
+
+    });
+
 
 
 		AFRAME.registerComponent('scale-on-mouseenter', {
@@ -258,6 +290,7 @@
 				scale="0.01 0.01 0.01"
 				animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
 				visible="false"
+				scale_periodic
 			></a-entity>
 
     <a-entity
