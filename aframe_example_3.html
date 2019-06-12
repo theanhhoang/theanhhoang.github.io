@@ -90,7 +90,7 @@
 		var scale_up = true;
 		AFRAME.registerComponent('scale_periodic', {
 			schema: {
-				to: {default: {x: 0.012, y: 0.012, z: 0.012}, type: "vec3"},
+				to: {default: {x: 0.011, y: 0.011, z: 0.011}, type: "vec3"},
 				from: {default: {x: 0.01, y: 0.01, z: 0.01}, type: "vec3"}
 			},
     	init: function()
@@ -102,7 +102,7 @@
     	{
 				var data = this.data;
 				var el = this.el;
-        if (tick_counter === 30) {
+        if (tick_counter === 50) {
 					if (scale_up){
 						el.object3D.scale.copy(data.to);
 					}else {
