@@ -59,6 +59,7 @@
 				this.target8 = document.querySelector('#particle');
 
 				this.skyEl = document.querySelector('#background');
+				this.plane = document.querySelector('#plane');
 
     	},
 
@@ -92,6 +93,9 @@
 
 
 					this.skyEl.setAttribute('src', '#sky');
+					this.plane.setAttribute('visible', true );
+
+
         }else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -279,12 +283,14 @@
 		 </a-sky>
 
     	<a-plane
+				id = "plane"
     		width="100" height="100"
     		position=" 0.00 0.00 0.00"
     		rotation="-90 0 0"
     		color="#888888"
     		material="src: #grid; repeat:100 100; transparent: true; opacity: 0.75"
-    		shadow="cast: false; receive: true">
+    		shadow="cast: false; receive: true"
+				visible = "false">
     	</a-plane>
 
 
@@ -378,7 +384,7 @@
 
 
 
-<a-entity id="particle" position="0 2.25 -15" particle-system="preset: snow; particleCount: 1000;" visible="false"></a-entity>
+<a-entity id="particle" position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000" visible="false"></a-entity>
 
 
 
