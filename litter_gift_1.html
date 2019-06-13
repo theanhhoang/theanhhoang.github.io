@@ -39,12 +39,12 @@
     	{
     		// this.num = 0;
     		this.target = document.querySelector('#textArea');
-				var target_time = new Date("Jun 14, 2019 02:44:00");
+				var target_time = new Date("Jun 18, 2019 00:00:00");
 				var time_now = new Date();
 
 				if (target_time > time_now){
 					this.countDownDate = target_time.getTime();
-				}else if (time_now - target_time < 10000) {
+				}else if (time_now - target_time < 86400000) {
 					this.countDownDate = time_now.getTime() + 5000;
 				}else{
 					this.countDownDate = target_time.getTime();
@@ -86,7 +86,7 @@
         // If the count down is finished, write some text
         if (distance < 0) {
 
-					if (distance < -10000) {
+					if (distance < -86400000) {
 	        	this.target.setAttribute("text-geometry", "value", "EXPIRED :((");
 	        }else{
 						this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
