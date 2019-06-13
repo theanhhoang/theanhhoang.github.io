@@ -39,7 +39,7 @@
     	{
     		// this.num = 0;
     		this.target = document.querySelector('#textArea');
-				var target_time = new Date("Jun 13, 2019 00:00:00");
+				var target_time = new Date("Jun 14, 2019 02:37:00");
 				var time_now = new Date();
 
 				if (target_time > time_now){
@@ -88,27 +88,26 @@
 	        	this.target.setAttribute("text-geometry", "value", "EXPIRED :((");
 	        }else{
 						this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
+
+						this.target2.setAttribute('visible', true );
+
+						this.target3.setAttribute('visible', true );
+
+						this.target4.setAttribute('visible', true );
+
+						this.target5.setAttribute('visible', true );
+
+						this.target6.setAttribute('visible', true );
+
+						this.target7.setAttribute('visible', true );
+
+						this.target8.setAttribute('visible', true );
+
+
+						this.skyEl.setAttribute('src', '#sky');
+						this.plane.setAttribute('visible', true );
+
 					}
-
-
-					this.target2.setAttribute('visible', true );
-
-					this.target3.setAttribute('visible', true );
-
-					this.target4.setAttribute('visible', true );
-
-					this.target5.setAttribute('visible', true );
-
-					this.target6.setAttribute('visible', true );
-
-					this.target7.setAttribute('visible', true );
-
-					this.target8.setAttribute('visible', true );
-
-
-					this.skyEl.setAttribute('src', '#sky');
-					this.plane.setAttribute('visible', true );
-
 
         } else {
           // Time calculations for days, hours, minutes and seconds
