@@ -53,6 +53,8 @@
 
 				this.target6 = document.querySelector('#links2');
 
+				this.target7 = document.querySelector('#gangnam_style');
+
     	},
 
     	tick: function (time, timeDelta)
@@ -78,6 +80,8 @@
 					this.target5.setAttribute('visible', true );
 
 					this.target6.setAttribute('visible', true );
+
+					this.target7.setAttribute('visible', true );
 
         }else {
           // Time calculations for days, hours, minutes and seconds
@@ -284,7 +288,7 @@
 
 			<a-entity
 				id="heart_obj"
-				position="-1.5 3 -3"
+				position="0 4 -3"
 				obj-model="obj: #heart-obj; mtl: #heart-mtl"
 				scale="0.01 0.01 0.01"
 				animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
@@ -315,36 +319,15 @@
 
 
 
-		<!-- <a-entity gltf-model="#cesium"
+		<a-entity
+			id="gangnam_style"
+			gltf-model="#cesium"
 			rotation="0 180 0"
 			position="0 0 2"
 			animation-mixer
+			visible="false"
 		></a-entity>
-		<a-entity gltf-model="#cesium"
-			rotation="0 180 0"
-			position="2 0 4"
-			animation-mixer
 		></a-entity>
-		<a-entity gltf-model="#cesium"
-			rotation="0 180 0"
-			position="-2 0 4"
-			animation-mixer
-		></a-entity>
-		<a-entity gltf-model="#cesium"
-			rotation="0 180 0"
-			position="0 0 6"
-			animation-mixer
-		></a-entity>
-		<a-entity gltf-model="#cesium"
-			rotation="0 180 0"
-			position="4 0 6"
-			animation-mixer
-		></a-entity>
-		<a-entity gltf-model="#cesium"
-			rotation="0 180 0"
-			position="-4 0 6"
-			animation-mixer
-		></a-entity> -->
 
 
 
