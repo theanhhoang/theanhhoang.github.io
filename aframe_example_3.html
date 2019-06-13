@@ -58,6 +58,8 @@
 
 				this.target8 = document.querySelector('#particle');
 
+				var this.skyEl = document.querySelector('#background');
+
     	},
 
     	tick: function (time, timeDelta)
@@ -89,6 +91,7 @@
 					this.target8.setAttribute('visible', true );
 
 
+					this.skyEl.setAttribute('src', '#sky');  
         }else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -264,11 +267,16 @@
 
     	</a-assets>
 
-    	<a-sky
+    	<!-- <a-sky
     		rotation = "0 0 0"
     		color = "#FFFFFF"
     		material = "src: #field">
-    	</a-sky>
+    	</a-sky> -->
+
+			<a-sky id="background" radius="10" src="#field"
+						 animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+						 animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
+		 </a-sky>
 
     	<a-plane
     		width="100" height="100"
