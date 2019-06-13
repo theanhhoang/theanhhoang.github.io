@@ -145,7 +145,7 @@
 			init: function () {
 				var el = this.el;
 				this.el.addEventListener('click', function () {
-					console.log(el.object3D.rotation);
+					// console.log(el.object3D.rotation);
 
 					// var entity = document.querySelector('[sound]');
 					// entity.components.sound.playSound();
@@ -188,10 +188,10 @@
     		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
 
         <!-- timeline used to play animations in sequence -->
-        <!-- <a-timeline id="myTimeline">
+        <a-timeline id="myTimeline">
           <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
           <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
-        </a-timeline> -->
+        </a-timeline>
 
         <a-mixin id="text"
           text="align: center; color: #AAAAFF; width: 6; opacity: 0"
@@ -302,10 +302,11 @@
 				scale_periodic
 			></a-entity>
 
-    <!-- <a-entity
+    <a-entity
       id="text1" mixin="text" text="value: Is this real life?"
       position="-2 2 -3"
-    ></a-entity> -->
+			visible="false"
+    ></a-entity>
 
 
 		<a-entity
