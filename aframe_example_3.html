@@ -309,12 +309,12 @@
 
 
 		<a-entity
-		id="links1"
+			class="time_waiting"
+			id="links1"
 			layout="type: line; margin: 2; radius: 1"
 			position="-4 2 2"
 			rotation="0 90 0"
 			align="center"
-			class="time_waiting"
 			visible="false"
 		>
 			<a-entity template="src: #link"  data-thumb="#1-thumb"></a-entity>
@@ -324,12 +324,12 @@
 
 
 		<a-entity
+			class="time_waiting"
 			id="links2"
 			layout="type: line; margin: 2; radius: 1"
 			position="4 2 -2"
 			rotation="0 -90 0"
 			align="center"
-			class="time_waiting"
 			visible="false"
 		>
 			<a-entity template="src: #link"  data-thumb="#4-thumb"></a-entity>
@@ -429,7 +429,7 @@
 			<a-light type="ambient" color="#445451"></a-light>
       <a-light type="point" intensity="0.5" position="-3 2 -2"></a-light>
 
-			<a-entity sound="src: #em_oi" positional="false"></a-entity>
+			<!-- <a-entity sound="src: #em_oi" positional="false"></a-entity> -->
 
     </a-scene>
   </body>
