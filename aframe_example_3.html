@@ -19,6 +19,7 @@
 
 	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
 
+	<script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
 
 </head>
 
@@ -326,7 +327,7 @@
 			scale="0.5 0.5 0.5"
 			rotation="0 0 0"
 			position="-2.5 2 -3"
-			animation="property: object3D.position.x; to: 5.5; dir: alternate; dur: 15000; loop: true"
+			animation="property: object3D.position.x; to: 6.5; dir: alternate; dur: 15000; loop: true"
 			animation-mixer
 			visible="false"
 		></a-entity>
@@ -363,7 +364,7 @@
 
 
 
-
+<a-entity position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000"></a-entity>
 
 
 
