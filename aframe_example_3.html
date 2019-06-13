@@ -42,7 +42,7 @@
 				var target_time = new Date("Jun 13, 2019 00:00:00");
 				var time_now = new Date();
 
-				if (target_time < time_now){
+				if (target_time > time_now){
 					this.countDownDate = target_time.getTime();
 				}else {
 					this.countDownDate = time_now.getTime() + 5000;
