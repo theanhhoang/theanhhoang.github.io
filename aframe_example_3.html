@@ -270,7 +270,6 @@
 
 
     	<a-entity
-				class="time_waiting"
     		id="textArea"
     		position="-1.5 1.5 -3"
     		text-geometry="font: #customFont;
@@ -278,7 +277,6 @@
     			height: 0.01;
     			value: Seconds: ?"
     		material="color: #AAAAFF;"
-
     	></a-entity>
 
 
@@ -310,14 +308,30 @@
     ></a-entity> -->
 
 
-		<a-entity id="links1" layout="type: line; margin: 2; radius: 1" position="-4 2 2" rotation="0 90 0" align="center" class="time_waiting">
+		<a-entity
+		id="links1"
+			layout="type: line; margin: 2; radius: 1"
+			position="-4 2 2"
+			rotation="0 90 0"
+			align="center"
+			class="time_waiting"
+			visible="false"
+		>
 			<a-entity template="src: #link"  data-thumb="#1-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#2-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#3-thumb"></a-entity>
 		</a-entity>
 
 
-		<a-entity id="links2" layout="type: line; margin: 2; radius: 1" position="4 2 -2" rotation="0 -90 0" align="center" class="time_waiting">
+		<a-entity
+			id="links2"
+			layout="type: line; margin: 2; radius: 1"
+			position="4 2 -2"
+			rotation="0 -90 0"
+			align="center"
+			class="time_waiting"
+			visible="false"
+		>
 			<a-entity template="src: #link"  data-thumb="#4-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#5-thumb"></a-entity>
 			<a-entity template="src: #link"  data-thumb="#6-thumb"></a-entity>
@@ -368,6 +382,7 @@
 			play_sound
 			scale-on-mouseenter
 			material="color: #ffffff;"
+			visible="false"
 		></a-entity>
 		<!-- animation="property: rotation; to: 0 0 360; loop: true; dur: 10000" -->
 
@@ -380,6 +395,7 @@
 			pause_sound
 			scale-on-mouseenter
 			material="color: #ffffff;"
+			visible="false"
 		></a-entity>
 
 
