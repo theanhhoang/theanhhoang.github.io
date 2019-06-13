@@ -96,7 +96,10 @@
 					this.plane.setAttribute('visible', true );
 
 
-        }else {
+        }else if (distance < -10000) {
+        	this.target.setAttribute("text-geometry", "value", "EXPIRED");
+        }
+				else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
