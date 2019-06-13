@@ -203,6 +203,8 @@
 
     		<img id="grid" src="images/border.png" crossorigin="anonymous" />
     		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
+
+				<img id="field" src="images/field-sphere.jpg" crossorigin="anonymous" />
     		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
 
         <!-- timeline used to play animations in sequence -->
@@ -265,7 +267,7 @@
     	<a-sky
     		rotation = "0 0 0"
     		color = "#FFFFFF"
-    		material = "src: #sky">
+    		material = "src: #field">
     	</a-sky>
 
     	<a-plane
@@ -341,7 +343,7 @@
 
 		<a-entity obj-model="obj: #play-obj; mtl: #play-mtl"
 			id = "play_button"
-			rotation="140 52 100"
+			rotation="150 52 100"
 			position="0.5 1 -3"
 			scale="2 2 2"
 			play_sound
@@ -368,7 +370,7 @@
 
 
 
-<a-entity id="particle" position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000" visible="false"></a-entity>
+<a-entity id="particle" position="0 2.25 -15" particle-system="preset: snow; particleCount: 1000;" visible="false"></a-entity>
 
 
 
