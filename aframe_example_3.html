@@ -58,7 +58,7 @@
 
 				this.target8 = document.querySelector('#particle');
 
-				var this.skyEl = document.querySelector('#background');
+				this.skyEl = document.querySelector('#background');
 
     	},
 
@@ -91,7 +91,7 @@
 					this.target8.setAttribute('visible', true );
 
 
-					this.skyEl.setAttribute('src', '#sky');  
+					this.skyEl.setAttribute('src', '#sky');
         }else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
