@@ -39,13 +39,15 @@
     	{
     		// this.num = 0;
     		this.target = document.querySelector('#textArea');
-				var target_time = new Date("Jun 14, 2019 02:37:00");
+				var target_time = new Date("Jun 14, 2019 02:44:00");
 				var time_now = new Date();
 
 				if (target_time > time_now){
 					this.countDownDate = target_time.getTime();
-				}else {
+				}else if (time_now - target_time < 10000) {
 					this.countDownDate = time_now.getTime() + 5000;
+				}else{
+					this.countDownDate = target_time.getTime();
 				}
 
 
