@@ -75,7 +75,13 @@
 
         // If the count down is finished, write some text
         if (distance < 0) {
-          this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
+
+					if (distance < -10000) {
+	        	this.target.setAttribute("text-geometry", "value", "EXPIRED");
+	        }else{
+						this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
+					}
+
 
 					this.target2.setAttribute('visible', true );
 
@@ -96,10 +102,7 @@
 					this.plane.setAttribute('visible', true );
 
 
-        }else if (distance < -10000) {
-        	this.target.setAttribute("text-geometry", "value", "EXPIRED");
-        }
-				else {
+        } else {
           // Time calculations for days, hours, minutes and seconds
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
