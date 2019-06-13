@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>1st Anniversary</title>
+
+	<script src="js/aframe/aframe.min.js"></script>
+	<script src="js/aframe/aframe-text-geometry-component.min.js"></script>
+
+  <script src="js/aframe/aframe-animation-component.min.js"></script>
+  <script src="js/aframe-animation-timeline-component.min.js"></script>
+
+	<script src="https://unpkg.com/aframe-event-set-component@5/dist/aframe-event-set-component.min.js"></script>
+
+	<script src="https://unpkg.com/aframe-layout-component@5.3.0/dist/aframe-layout-component.min.js"></script>
+
+	<script src="https://unpkg.com/aframe-template-component@3.2.1/dist/aframe-template-component.min.js"></script>
+	<script src="https://unpkg.com/aframe-proxy-event-component@2.1.0/dist/aframe-proxy-event-component.min.js"></script>
+
+	<script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
+
+	<script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+
+</head>
+
+  <body>
+
+  <script>
+
+		var audio = new Audio("audio/Em_Oi.mp3");
+		audio.addEventListener('ended', function() {
+		    this.currentTime = 0;
+		    this.play();
+		}, false);
+		var audio_playing = false;
+    AFRAME.registerComponent('updater', {
+
+    	init: function()
+    	{
+    		// this.num = 0;
+    		this.target = document.querySelector('#textArea');
+				var target_time = new Date("Jun 18, 2019 00:00:00");
+				var time_now = new Date();
+
+				if (target_time > time_now){
+					this.countDownDate = target_time.getTime();
+				}else if (time_now - target_time < 86400000) {
+					this.countDownDate = time_now.getTime() + 5000;
+				}else{
+					this.countDownDate = target_time.getTime();
+				}
+
+
+
+
+				this.target2 = document.querySelector('#heart_obj');
+
+				this.target3 = document.querySelector('#play_button');
+
+
+				this.target4 = document.querySelector('#pause_button');
+
+				this.target5 = document.querySelector('#links1');
+
+				this.target6 = document.querySelector('#links2');
+
+				this.target7 = document.querySelector('#gangnam_style');
+
+				this.target8 = document.querySelector('#particle');
+
+				this.skyEl = document.querySelector('#background');
+				this.plane = document.querySelector('#plane');
+
+    	},
+
+    	tick: function (time, timeDelta)
+    	{
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = this.countDownDate - now;
+
+
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+
+					if (distance < -86400000) {
+	        	this.target.setAttribute("text-geometry", "value", "EXPIRED :((");
+	        }else{
+						this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
+
+						this.target2.setAttribute('visible', true );
+
+						this.target3.setAttribute('visible', true );
+
+						this.target4.setAttribute('visible', true );
+
+						this.target5.setAttribute('visible', true );
+
+						this.target6.setAttribute('visible', true );
+
+						this.target7.setAttribute('visible', true );
+
+						this.target8.setAttribute('visible', true );
+
+
+						this.skyEl.setAttribute('src', '#sky');
+						this.plane.setAttribute('visible', true );
+
+					}
+
+        } else {
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          this.target.setAttribute("text-geometry", "value", days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+        }
+
+
+    	}
+
+    });
+
+
+		var tick_counter = 0;
+		var scale_up = true;
+		AFRAME.registerComponent('scale_periodic', {
+			schema: {
+				to: {default: {x: 0.011, y: 0.011, z: 0.011}, type: "vec3"},
+				from: {default: {x: 0.01, y: 0.01, z: 0.01}, type: "vec3"}
+			},
+    	init: function()
+    	{
+				this.num = 0
+    	},
+
+    	tick: function (time, timeDelta)
+    	{
+				var data = this.data;
+				var el = this.el;
+        if (tick_counter === 50) {
+					if (scale_up){
+						el.object3D.scale.copy(data.to);
+					}else {
+						el.object3D.scale.copy(data.from);
+					}
+					scale_up = !scale_up;
+					tick_counter = 0;
+        }
+
+				tick_counter++;
+    	}
+
+    });
+
+
+
+		AFRAME.registerComponent('scale-on-mouseenter', {
+			schema: {
+				to: {default: {x: 4, y: 4, z: 4}, type: "vec3"},
+				from: {default: {x: 2, y: 2, z: 2}, type: "vec3"}
+			},
+
+			init: function () {
+				var data = this.data;
+				var el = this.el;
+				this.el.addEventListener('mouseenter', function () {
+
+					el.object3D.scale.copy(data.to);
+				});
+
+				this.el.addEventListener('mouseleave', function () {
+
+					el.object3D.scale.copy(data.from);
+				});
+			}
+		});
+
+
+		AFRAME.registerComponent('play_sound', {
+			init: function () {
+				var el = this.el;
+				this.el.addEventListener('click', function () {
+					console.log(el.object3D.rotation);
+
+					// var entity = document.querySelector('[sound]');
+					// entity.components.sound.playSound();
+					if (!audio_playing){
+						audio.play();
+						audio_playing = !audio_playing;
+					}
+				});
+			}
+		});
+
+		AFRAME.registerComponent('pause_sound', {
+			init: function () {
+				var el = this.el;
+				this.el.addEventListener('click', function () {
+					// console.log("pause sound");
+					// var entity = document.querySelector('[sound]');
+					// entity.components.sound.pauseSound();
+					if (audio_playing){
+						audio.pause();
+						audio_playing = !audio_playing;
+					}
+
+				});
+			}
+		});
+
+
+  </script>
+
+<a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
+  <!-- <a-scene antialias="true"> -->
+    	<a-assets>
+				<img id="boxTexture" src="https://i.imgur.com/mYmmbrp.jpg" crossorigin="anonymous">
+				<img id="skyTexture" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg" crossorigin="anonymous">
+
+
+    		<img id="grid" src="images/border.png" crossorigin="anonymous" />
+    		<img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
+
+				<img id="field" src="images/field-sphere.jpg" crossorigin="anonymous" />
+    		<a-asset-item id="customFont" src="fonts/helvetiker_regular.typeface.json"></a-asset-item>
+
+        <!-- timeline used to play animations in sequence -->
+        <a-timeline id="myTimeline">
+          <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+          <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+        </a-timeline>
+
+        <a-mixin id="text"
+          text="align: center; color: #AAAAFF; width: 6; opacity: 0"
+          animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
+          animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
+          position="-10 2 -3"
+          visible="false">
+        </a-mixin>
+
+
+				<img id="1-thumb" crossorigin="anonymous" src="images/aframe/anni/1.jpg">
+				<img id="2-thumb" crossorigin="anonymous" src="images/aframe/anni/2.jpg">
+				<img id="3-thumb" crossorigin="anonymous" src="images/aframe/anni/3.jpg">
+				<img id="4-thumb" crossorigin="anonymous" src="images/aframe/anni/4.jpg">
+				<img id="5-thumb" crossorigin="anonymous" src="images/aframe/anni/5.jpg">
+				<img id="6-thumb" crossorigin="anonymous" src="images/aframe/anni/6.jpg">
+
+
+
+				<!-- Image link template to be reused. -->
+				<script id="link" type="text/html">
+					<a-entity class="link"
+						geometry="primitive: plane; height: 1; width: 1"
+						material="shader: flat; src: ${thumb}"
+						event-set__mouseenter="scale: 2 2 2"
+						event-set__mouseleave="scale: 1 1 1"
+					></a-entity>
+				</script>
+
+
+
+
+				<a-asset-item id="cesium" src="images/aframe/CesiumMan.glb"></a-asset-item>
+
+				<!-- <a-asset-item id="play_button" src="images/aframe/play_button/model.gltf"></a-asset-item>
+				<a-asset-item id="pause_button" src="images/aframe/pause_button/model.gltf"></a-asset-item> -->
+
+				<a-asset-item id="play-obj" src="images/aframe/play_button/model.obj"></a-asset-item>
+				<a-asset-item id="play-mtl" src="images/aframe/play_button/materials.mtl"></a-asset-item>
+
+				<a-asset-item id="pause-obj" src="images/aframe/pause_button/model.obj"></a-asset-item>
+				<a-asset-item id="pause-mtl" src="images/aframe/pause_button/materials.mtl"></a-asset-item>
+
+
+
+				<a-asset-item id="heart-obj" src="images/aframe/Heart/Heart.obj"></a-asset-item>
+				<a-asset-item id="heart-mtl" src="images/aframe/Heart/Heart.mtl"></a-asset-item>
+
+
+
+    	</a-assets>
+
+    	<!-- <a-sky
+    		rotation = "0 0 0"
+    		color = "#FFFFFF"
+    		material = "src: #field">
+    	</a-sky> -->
+
+			<a-sky id="background" radius="10" src="#field"
+						 animation__fade="property: components.material.material.color; type: color; from: #FFF; to: #000; dur: 300; startEvents: fade"
+						 animation__fadeback="property: components.material.material.color; type: color; from: #000; to: #FFF; dur: 300; startEvents: animationcomplete__fade">
+		 </a-sky>
+
+    	<a-plane
+				id = "plane"
+    		width="100" height="100"
+    		position=" 0.00 0.00 0.00"
+    		rotation="-90 0 0"
+    		color="#888888"
+    		material="src: #grid; repeat:100 100; transparent: true; opacity: 0.75"
+    		shadow="cast: false; receive: true"
+				visible = "false">
+    	</a-plane>
+
+
+
+    	<a-entity
+    		id="textArea"
+    		position="-2.5 1.5 -3"
+				align="center"
+    		text-geometry="font: #customFont;
+    			size: 0.5;
+    			height: 0.01;
+    			value: Seconds: ?"
+    		material="color: #AAAAFF;"
+
+    	></a-entity>
+
+
+			<a-entity
+				id="heart_obj"
+				position="-4 2 -3"
+				obj-model="obj: #heart-obj; mtl: #heart-mtl"
+				scale="0.01 0.01 0.01"
+				animation="property: rotation; to: 0 360 0; loop: true; dur: 10000"
+				visible="false"
+				scale_periodic
+			></a-entity>
+
+    <a-entity
+      id="text1" mixin="text" text="value: Is this real life?"
+      position="-2 2 -3"
+			visible="false"
+    ></a-entity>
+
+
+		<a-entity id="links1" layout="type: line; margin: 2; radius: 1" position="-6 2 2" rotation="0 90 0" align="center" visible="false">
+			<a-entity template="src: #link"  data-thumb="#1-thumb"></a-entity>
+			<a-entity template="src: #link"  data-thumb="#2-thumb"></a-entity>
+			<a-entity template="src: #link"  data-thumb="#3-thumb"></a-entity>
+		</a-entity>
+
+
+		<a-entity id="links2" layout="type: line; margin: 2; radius: 1" position="6 2 -2" rotation="0 -90 0" align="center" visible="false">
+			<a-entity template="src: #link"  data-thumb="#4-thumb"></a-entity>
+			<a-entity template="src: #link"  data-thumb="#5-thumb"></a-entity>
+			<a-entity template="src: #link"  data-thumb="#6-thumb"></a-entity>
+		</a-entity>
+
+
+
+
+		<a-entity
+			id="gangnam_style"
+			gltf-model="#cesium"
+			scale="0.5 0.5 0.5"
+			rotation="0 0 0"
+			position="-2.5 2 -3"
+			animation="property: object3D.position.x; to: 6.2; dir: alternate; dur: 15000; loop: true"
+			animation-mixer
+			visible="false"
+		></a-entity>
+		></a-entity>
+
+
+
+		<a-entity obj-model="obj: #play-obj; mtl: #play-mtl"
+			id = "play_button"
+			rotation="150 52 100"
+			position="0.5 1 -3"
+			scale="2 2 2"
+			play_sound
+			scale-on-mouseenter
+			material="color: #ffffff;"
+			visible="false"
+		></a-entity>
+		<!-- animation="property: rotation; to: 0 0 360; loop: true; dur: 10000" -->
+
+		<a-entity obj-model="obj: #pause-obj; mtl: #pause-mtl"
+			id = "pause_button"
+			rotation="110 10 0"
+			position="-0.5 1 -3"
+			scale="2 2 2"
+			pause_sound
+			scale-on-mouseenter
+			material="color: #ffffff;"
+			visible="false"
+		></a-entity>
+
+
+
+
+
+
+
+<a-entity id="particle" position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000" visible="false"></a-entity>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    	<!-- adding the updater last so it can get references to other entities -->
+    	<a-entity updater></a-entity>
+
+			<a-camera>
+        <a-cursor></a-cursor>
+      </a-camera>
+
+			<a-light type="ambient" color="#445451"></a-light>
+      <a-light type="point" intensity="0.5" position="-3 2 -2"></a-light>
+
+			<a-entity sound="src: #em_oi" positional="false"></a-entity>
+
+    </a-scene>
+  </body>
+</html>
