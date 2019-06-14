@@ -10,7 +10,7 @@
     {
       // this.num = 0;
       this.target = document.querySelector('#textArea');
-      var target_time = new Date("Jun 13, 2019 00:00:00");
+      var target_time = new Date("Jun 14, 2019 09:17:00");
       var time_now = new Date();
 
       if (target_time > time_now){
