@@ -103,7 +103,7 @@
 
 						this.target7.setAttribute('visible', true );
 
-						this.target8.setAttribute('visible', true );
+						this.target8.setAttribute('particle-system.enabled', true );
 
 
 						this.skyEl.setAttribute('src', '#sky');
@@ -395,7 +395,7 @@
 
 
 
-<a-entity id="particle" position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000" visible="false"></a-entity>
+<a-entity id="particle" position="0 2.25 -15" particle-system="preset: snow; particleCount: 5000; enabled: false" ></a-entity>
 
 
 
@@ -416,11 +416,6 @@
 			<a-camera>
         <a-cursor color="##0CEF04"></a-cursor>
       </a-camera>
-
-			<a-light type="ambient" color="#445451"></a-light>
-      <a-light type="point" intensity="0.5" position="-3 2 -2"></a-light>
-
-			<a-entity sound="src: #em_oi" positional="false"></a-entity>
 
     </a-scene>
   </body>
