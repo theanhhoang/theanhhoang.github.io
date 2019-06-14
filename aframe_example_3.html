@@ -29,6 +29,48 @@
 
 
 
+			<a-scene animation-timeline__1="timeline: #myTimeline; loop: true">
+			<!-- <a-scene antialias="true"> -->
+			    <a-assets>
+			      <img id="grid" src="images/border.png" crossorigin="anonymous" />
+			      <img id="sky" src="images/stars.jpg" crossorigin="anonymous" />
+
+			      <img id="field" src="images/field-sphere.jpg" crossorigin="anonymous" />
+			      <a-asset-item id="customFont" src="fonts/Roboto_Regular.json"></a-asset-item>
+
+			      <!-- timeline used to play animations in sequence -->
+			      <a-timeline id="myTimeline">
+			        <a-timeline-animation select="#text1" name="fadeout"></a-timeline-animation>
+			        <a-timeline-animation select="#text1" name="fadein"></a-timeline-animation>
+			      </a-timeline>
+
+			      <a-mixin id="text"
+			        text="align: center; color: #AAAAFF; width: 6; opacity: 0"
+			        animation__fadein="property: text.opacity; from: 0; to: 1; dur: 3000; easing: linear; autoplay: false"
+			        animation__fadeout="property: text.opacity; from: 1; to: 0; dur: 3000; easing: linear; autoplay: false"
+			        position="-10 2 -3"
+			        visible="false">
+			      </a-mixin>
+
+
+			      <img id="1-thumb" crossorigin="anonymous" src="images/aframe/anni/1.jpg">
+			      <img id="2-thumb" crossorigin="anonymous" src="images/aframe/anni/2.jpg">
+			      <img id="3-thumb" crossorigin="anonymous" src="images/aframe/anni/3.jpg">
+			      <img id="4-thumb" crossorigin="anonymous" src="images/aframe/anni/4.jpg">
+			      <img id="5-thumb" crossorigin="anonymous" src="images/aframe/anni/5.jpg">
+			      <img id="6-thumb" crossorigin="anonymous" src="images/aframe/anni/6.jpg">
+
+
+
+			      <!-- Image link template to be reused. -->
+			      <script id="link" type="text/html">
+			        <a-entity class="link"
+			          geometry="primitive: plane; height: 1; width: 1"
+			          material="shader: flat; src: ${thumb}"
+			          event-set__mouseenter="scale: 2 2 2"
+			          event-set__mouseleave="scale: 1 1 1"
+			        ></a-entity>
+			      </script>
 
 				<a-asset-item id="cesium" src="images/aframe/CesiumMan.glb"></a-asset-item>
 
