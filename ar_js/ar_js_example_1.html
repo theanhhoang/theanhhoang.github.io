@@ -13,8 +13,8 @@
 
     <a-scene embedded arjs>
       <a-assets>
-        <a-asset-item id="cake_obj" src="images/birthday/Cake_01.obj"></a-asset-item>
-        <a-asset-item id="cake_mtl" src="images/birthday/Cake_01.mtl"></a-asset-item>
+        <!-- <a-asset-item id="cake_obj" src="images/birthday/Cake_01.obj"></a-asset-item>
+        <a-asset-item id="cake_mtl" src="images/birthday/Cake_01.mtl"></a-asset-item> -->
 
       </a-assets>
 
@@ -30,7 +30,7 @@
 
 
           <a-entity
-            obj-model="obj: #cake_obj; mtl: #cake_mtl"
+            obj-model="obj: url(images/birthday/Cake_01.obj); mtl: url(images/birthday/Cake_01.mtl)"
             rotation="-90 0 0"
             scale="0.01 0.01 0.01"
           ></a-entity>
