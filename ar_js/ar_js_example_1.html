@@ -16,22 +16,22 @@
   <body style='margin : 0px; overflow: hidden;'>
 
     <a-scene arjs='sourceType: webcam;'>
-
+      <a-assets>
+        <a-asset-item id="cake_obj" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.obj"></a-asset-item>
+        <a-asset-item id="cake_mtl" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.mtl"></a-asset-item>
+      </a-assets>
 
 
 
       <a-marker preset="hiro">
-          <a-scene>
-            <a-assets>
-              <a-asset-item id="cake_obj" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.obj"></a-asset-item>
-              <a-asset-item id="cake_mtl" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.mtl"></a-asset-item>
-            </a-assets>
+
 
             <a-entity
               obj-model="obj: #cake_obj; mtl: #cake_mtl"
+              rotation="-90 0 0"
+              scale="0.1 0.1 0.1"
             ></a-entity>
 
-          </a-scene>
 
       </a-marker>
 
