@@ -17,10 +17,10 @@
 
     <a-scene arjs='sourceType: webcam;'>
       <a-assets>
-        <a-asset-item id="cake_obj" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.obj"></a-asset-item>
-        <a-asset-item id="cake_mtl" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.mtl"></a-asset-item>
+        <!-- <a-asset-item id="cake_obj" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.obj"></a-asset-item>
+        <a-asset-item id="cake_mtl" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.mtl"></a-asset-item> -->
 
-        <a-asset-item id="cesium" src="images/CesiumMan.glb"></a-asset-item>
+        <a-asset-item id="cake_gltf" src="images/birthday/Cake_01.gltf"></a-asset-item>
       </a-assets>
 
 
@@ -34,11 +34,9 @@
               scale="0.1 0.1 0.1"
             ></a-entity> -->
 
-            <a-entity gltf-model="#cesium"
+            <a-entity gltf-model="#cake_gltf"
             rotation="-90 0 0"
-            position="0 0 2"
-            animation-mixer
-            animation="property: object3D.position.x; to: 3; dir: alternate; dur: 5000; loop: true"
+            position="0 0 0"
           ></a-entity>
       </a-marker>
 
