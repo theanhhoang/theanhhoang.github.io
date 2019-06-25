@@ -24,7 +24,9 @@
         this.target = document.querySelector('#textArea');
         var target_time = new Date("Jun 25, 2019 02:51:00");
         var time_now = new Date();
-        this.target2 = document.querySelector('#gift');
+        this.target2 = document.querySelector('#cake');
+        this.target3 = document.querySelector('#text');
+        this.target4 = document.querySelector('#particle');
         if (target_time > time_now){
           this.countDownDate = target_time.getTime();
         }else if (time_now - target_time < 86400000) {
@@ -52,6 +54,8 @@
             this.target.setAttribute("text-geometry", "value", "EXPIRED :((");
           }else{
             this.target2.setAttribute('visible', true );
+            this.target3.setAttribute('visible', true );
+            this.target4.setAttribute('visible', true );
             // this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
             this.target.setAttribute('visible', false );
 
@@ -87,22 +91,27 @@
 
 
       <a-marker preset="hiro">
-          <!-- <a-entity gltf-model="#cake_gltf"
+          <a-entity gltf-model="#cake_gltf"
+            id="cake"
             rotation="-90 0 0"
             position="0 0 0.5"
             scale="0.2 0.1 0.2"
-          ></a-entity> -->
+            visible="false"
+          ></a-entity>
 
-          <!-- <a-entity gltf-model="#text_gltf"
+          <a-entity gltf-model="#text_gltf"
+            id="text"
             rotation="-90 0 0"
             position="0.9 0 -0.5"
             scale="0.3 0.3 0.3"
             animation="property: rotation; to: -90 0 360; loop: true; dur: 10000; easing: linear;"
-          ></a-entity> -->
+            visible="false"
+          ></a-entity>
 
 
+          <a-entity id="particle" position="0 0 -3" particle-system="preset: snow; particleCount: 10000" visible="false"></a-entity>
 
-            <a-entity
+            <!-- <a-entity
               id="gift"
               rotation="-90 0 0"
               visible="false"
@@ -117,7 +126,7 @@
                 position="0.9 0 -1.5"
                 scale="0.3 0.3 0.3"
               ></a-entity>
-            </a-entity>
+            </a-entity> -->
 
             <a-entity
               id="textArea"
@@ -133,7 +142,6 @@
 
             ></a-entity>
 
-          <!-- <a-entity id="particle" position="0 0 -3" particle-system="preset: snow; particleCount: 10000"></a-entity> -->
       </a-marker>
 
 
