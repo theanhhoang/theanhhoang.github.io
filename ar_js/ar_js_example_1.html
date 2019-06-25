@@ -27,6 +27,7 @@
         this.target2 = document.querySelector('#cake');
         this.target3 = document.querySelector('#text');
         this.target4 = document.querySelector('#particle');
+        this.target5 = document.querySelector('#textArea2');
         if (target_time > time_now){
           this.countDownDate = target_time.getTime();
         }else if (time_now - target_time < 86400000) {
@@ -56,6 +57,7 @@
             this.target2.setAttribute('visible', true );
             this.target3.setAttribute('visible', true );
             this.target4.setAttribute('visible', true );
+            this.target5.setAttribute('visible', true );
             // this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
             this.target.setAttribute('visible', false );
 
@@ -104,6 +106,20 @@
             rotation="-90 0 0"
             position="0.9 0 -0.5"
             scale="0.3 0.3 0.3"
+            visible="false"
+          ></a-entity>
+          <a-entity
+
+            id="textArea2"
+            position="-1 0 1.5"
+            rotation="-90 0 0"
+            align="center"
+            scale="0.6 0.6 0.6"
+            text-geometry="font: #customFont;
+              size: 0.5;
+              height: 0.01;
+              value: SARANGHAE <3"
+            material="color: #FFFFFF;"
             visible="false"
           ></a-entity>
 
