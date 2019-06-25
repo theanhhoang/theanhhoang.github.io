@@ -1,0 +1,151 @@
+<!doctype HTML>
+<html>
+<head>
+  <!-- <script src="js/aframe/aframe.min.js"></script>
+  <script src="js/aframe-ar.min.js"></script> -->
+
+  <script src="https://aframe.io/releases/0.9.1/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.7.1/aframe/build/aframe-ar.js"></script>
+
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/cfe5f316/dist/aframe-extras.js"></script>
+
+
+  <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
+  <script src="js/aframe/aframe-text-geometry-component.min.js"></script>
+</head>
+
+  <body style='margin : 0px; overflow: hidden;'>
+    <script>
+    AFRAME.registerComponent('updater', {
+
+      init: function()
+      {
+        // this.num = 0;
+        this.target = document.querySelector('#textArea');
+        var target_time = new Date("Jun 25, 2019 23:15:00");
+        var time_now = new Date();
+        this.target2 = document.querySelector('#cake');
+        this.target3 = document.querySelector('#text');
+        this.target4 = document.querySelector('#particle');
+        this.target5 = document.querySelector('#textArea2');
+        if (target_time > time_now){
+          this.countDownDate = target_time.getTime();
+        }else if (time_now - target_time < 86400000) {
+          this.countDownDate = time_now.getTime() + 5000;
+        }else{
+          this.countDownDate = target_time.getTime();
+        }
+
+      },
+
+      tick: function (time, timeDelta)
+      {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = this.countDownDate - now;
+
+
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+
+          if (distance < -86400000) {
+            this.target.setAttribute("text-geometry", "value", "EXPIRED :((");
+          }else{
+            this.target2.setAttribute('visible', true );
+            this.target3.setAttribute('visible', true );
+            this.target4.setAttribute('visible', true );
+            this.target5.setAttribute('visible', true );
+            // this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
+            this.target.setAttribute('visible', false );
+
+          }
+
+        } else {
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          this.target.setAttribute("text-geometry", "value", days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+        }
+
+
+      }
+
+    });
+    </script>
+
+
+
+
+    <a-scene arjs='sourceType: webcam;'>
+      <a-assets>
+        <a-asset-item id="cake_gltf" src="images/birthday/Cake_01.gltf"></a-asset-item>
+        <a-asset-item id="text_gltf" src="images/birthday/GREETINGS.gltf"></a-asset-item>
+
+
+        <a-asset-item id="customFont" src="fonts/Roboto_Regular.json"></a-asset-item>
+      </a-assets>
+
+
+
+      <a-marker preset="hiro">
+          <a-entity gltf-model="#cake_gltf"
+            id="cake"
+            rotation="-90 0 0"
+            position="0 0 0.5"
+            scale="0.2 0.1 0.2"
+            visible="false"
+          ></a-entity>
+
+          <a-entity gltf-model="#text_gltf"
+            id="text"
+            rotation="-90 0 0"
+            position="0.9 0 -0.5"
+            scale="0.3 0.3 0.3"
+            visible="false"
+          ></a-entity>
+          <a-entity
+
+            id="textArea2"
+            position="-1.5 0 1.5"
+            rotation="-90 0 0"
+            align="center"
+            scale="0.6 0.6 0.6"
+            text-geometry="font: #customFont;
+              size: 0.5;
+              height: 0.01;
+              value: SARANGHAE <3"
+            material="color: #FFFFFF;"
+            visible="false"
+          ></a-entity>
+
+
+          <a-entity id="particle" position="0 0 -3" particle-system="preset: snow; particleCount: 10000" visible="false"></a-entity>
+
+            <a-entity
+              id="textArea"
+              position="-1 -1 -0.5"
+              rotation="-90 0 0"
+              align="center"
+              scale="0.3 0.3 0.3"
+              text-geometry="font: #customFont;
+                size: 0.5;
+                height: 0.01;
+                value: ..."
+              material="color: #AAAAFF;"
+
+            ></a-entity>
+
+      </a-marker>
+
+
+
+      <a-entity updater></a-entity>
+      <a-entity camera></a-entity>
+    </a-scene>
+  </body>
+</html>
