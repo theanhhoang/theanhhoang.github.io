@@ -11,18 +11,75 @@
 
 
   <script src="https://unpkg.com/aframe-particle-system-component@1.0.x/dist/aframe-particle-system-component.min.js"></script>
-
+  <script src="js/aframe/aframe-text-geometry-component.min.js"></script>
 </head>
 
   <body style='margin : 0px; overflow: hidden;'>
+    <script>
+    AFRAME.registerComponent('updater', {
+
+      init: function()
+      {
+        // this.num = 0;
+        this.target = document.querySelector('#textArea');
+        var target_time = new Date("Jun 25, 2019 02:51:00");
+        var time_now = new Date();
+
+        if (target_time > time_now){
+          this.countDownDate = target_time.getTime();
+        }else if (time_now - target_time < 86400000) {
+          this.countDownDate = time_now.getTime() + 5000;
+        }else{
+          this.countDownDate = target_time.getTime();
+        }
+
+      },
+
+      tick: function (time, timeDelta)
+      {
+        // Get today's date and time
+        var now = new Date().getTime();
+
+        // Find the distance between now and the count down date
+        var distance = this.countDownDate - now;
+
+
+
+        // If the count down is finished, write some text
+        if (distance < 0) {
+
+          if (distance < -86400000) {
+            this.target.setAttribute("text-geometry", "value", "EXPIRED :((");
+          }else{
+            this.target.setAttribute("text-geometry", "value", "HAPPY 1ST ANNIVERSARY");
+
+          }
+
+        } else {
+          // Time calculations for days, hours, minutes and seconds
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          this.target.setAttribute("text-geometry", "value", days + "d " + hours + "h " + minutes + "m " + seconds + "s ");
+        }
+
+
+      }
+
+    });
+    </script>
+
+
+
 
     <a-scene arjs='sourceType: webcam;'>
       <a-assets>
-        <!-- <a-asset-item id="cake_obj" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.obj"></a-asset-item>
-        <a-asset-item id="cake_mtl" src="https://theanhhoang.github.io/ar_js/images/birthday/Cake_01.mtl"></a-asset-item> -->
-
         <a-asset-item id="cake_gltf" src="images/birthday/Cake_01.gltf"></a-asset-item>
         <a-asset-item id="text_gltf" src="images/birthday/GREETINGS.gltf"></a-asset-item>
+
+
+        <a-asset-item id="customFont" src="fonts/Roboto_Regular.json"></a-asset-item>
       </a-assets>
 
 
@@ -43,7 +100,7 @@
 
 
 
-            <a-entity
+            <!-- <a-entity
               rotation="-90 0 0"
               animation="property: rotation; to: -90 0 360; loop: true; dur: 10000; easing: linear;"
 
@@ -52,8 +109,20 @@
                 position="0.9 0 -0.5"
                 scale="0.3 0.3 0.3"
               ></a-entity>
-            </a-entity>
+            </a-entity> -->
 
+            <a-entity
+              id="textArea"
+              position="0.9 0 -0.5"
+              rotation="-90 0 0"
+              align="center"
+              text-geometry="font: #customFont;
+                size: 0.5;
+                height: 0.01;
+                value: ..."
+              material="color: #AAAAFF;"
+
+            ></a-entity>
 
           <!-- <a-entity id="particle" position="0 0 -3" particle-system="preset: snow; particleCount: 10000"></a-entity> -->
       </a-marker>
