@@ -53,13 +53,14 @@ Skills
 ======
 * Python, C++, HTML, CSS, JavaScript, PHP, C#
 * MySQL, AWS, Git, Ubuntu, FreeBSD, Neural Network
-* 
+
 
 Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
+  
   
 Teaching
 ======
