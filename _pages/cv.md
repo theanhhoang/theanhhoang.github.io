@@ -12,8 +12,8 @@ redirect_from:
 
 Education
 ======
-* Bachelor of Engineering (Telecommunication and Network) (Honours) (GPA: 3.594), Swinburne University of Technology, 2018
 * Doctor of Philosophy (Transport Engineering), Monash University, (In-Progress)
+* Bachelor of Engineering (Telecommunication and Network) (Honours) (GPA: 3.594), Swinburne University of Technology, 2018
 
 Work experience
 ======
