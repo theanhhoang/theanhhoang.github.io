@@ -1,15 +1,10 @@
 ---
-title: "Punching Holes in the International Busa Machine Narrative"
+title: "Optimal Trajectory Planning Framework for a Mixed Traffic Network"
 collection: publications
-permalink: /publication/2020-05-31-punching-holes-in-IBM
-excerpt: 'This paper is offers a counter-hegemonic cultural memory and media archeology of punch-card technologies.'
-date: 2020-05-31
-venue: 'Interdisciplinary Digital Engagement in Arts & Humanities (IDEAH)'
-paperurl: 'https://ideah.pubpub.org/pub/7yvuobes/release/1'
-citation: 'Jacob, A. (2020). Punching Holes in the International Busa Machine Narrative. IDEAH. https://doi.org/10.21428/f1f23564.d7d097c2.'
+permalink: 
+excerpt: 
+date: 
+venue: '2022 IEEE 25th International Conference on Intelligent Transportation Systems (ITSC)'
+paperurl: 'https://ieeexplore.ieee.org/document/9922521'
+citation: 'A. T. Hoang, C. H. P. Nguyen, D. Ngoduy and H. L. Vu, "Optimal Trajectory Planning Framework for a Mixed Traffic Network," 2022 IEEE 25th International Conference on Intelligent Transportation Systems (ITSC), 2022, pp. 2756-2762, doi: 10.1109/ITSC55140.2022.9922521.'
 ---
-This paper is offers a counter-hegemonic cultural memory and media archeology of punch-card technologies.
-
-[Download paper here](https://ideah.pubpub.org/pub/7yvuobes/release/1)
-
-Recommended citation: Jacob, A. (2020). Punching Holes in the International Busa Machine Narrative. IDEAH. 1(1). https://doi.org/10.21428/f1f23564.d7d097c2.
