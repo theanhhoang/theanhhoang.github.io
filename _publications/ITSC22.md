@@ -1,7 +1,7 @@
 ---
 title: "Optimal Trajectory Planning Framework for a Mixed Traffic Network"
 collection: publications
-permalink: 
+permalink: /publication/ITSC22
 excerpt: 
 date: 
 venue: '2022 IEEE 25th International Conference on Intelligent Transportation Systems (ITSC)'
