@@ -1,7 +1,13 @@
 ---
 title: "Bi-level optimization transport network"
-excerpt: "Bi-level optimization transport network<br/><img style="max-width:600px;width:50%" src='/images/ModelStructure.png'>"
+excerpt: "Bi-level optimization transport network<br/><img src='/images/ModelStructure.png'>"
 collection: projects
 ---
 
-Bi-level optimization transport network.
+## Description
+
+## Tech Stack
+* Python
+* SUMO simulation
+
+## Link

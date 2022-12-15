@@ -1,7 +1,15 @@
 ---
 title: "Street light control webpage"
-excerpt: "Street light control webpage<br/><img style="max-width:600px;width:50%" src='/images/streetlight.jpg'>"
+excerpt: "Street light control webpage<br/><img src='/images/streetlight.jpg'>"
 collection: projects
 ---
 
-Street light control webpage. 
+## Description
+
+## Tech Stack
+* Linux
+* Apache
+* MySQL
+* HMTL, CSS, Javascript, Bootstrap
+
+## Link
