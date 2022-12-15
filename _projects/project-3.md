@@ -1,6 +1,6 @@
 ---
 title: "Bi-level optimization transport network"
-excerpt: "Bi-level optimization transport network<br/><img style="max-width: 50%;" src='/images/ModelStructure.png'>"
+excerpt: "Bi-level optimization transport network<br/><img style="max-width:600px;width:50%" src='/images/ModelStructure.png'>"
 collection: projects
 ---
 
