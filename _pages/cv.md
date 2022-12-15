@@ -55,7 +55,13 @@ redirect_from:
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-  
+
+## Projects
+  <ul>{% for post in site.projects %}
+    {% include archive-single-cv.html %}
+  {% endfor %}</ul>
+
+
 ## Teaching
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
