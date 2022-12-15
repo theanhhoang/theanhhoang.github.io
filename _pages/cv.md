@@ -10,12 +10,12 @@ redirect_from:
 
 {% include base_path %}
 
-Education
+## Education
 ======
 * Doctor of Philosophy (Transport Engineering), Monash University, (In-Progress)
 * Bachelor of Engineering (Telecommunication and Network) (Honours) (GPA: 3.594), Swinburne University of Technology, 2018
 
-Work experience
+## Work experience
 ======
 * Oct 2018 - Feb 2020: Software Engineer- Smart Street Light Project
   * Foxnite JSC, Ho Chi Minh City, Vietnam
@@ -40,7 +40,7 @@ Work experience
     * Developed TEACUP tool (in Python) to support MP-TCP experiments
     * Wrote up a technical report of the project
 
-Other work experience
+## Other work experience
 ======
 
 * Aug 2022 - Current: eExam IT Support
@@ -49,20 +49,20 @@ Other work experience
     * Troubleshoot technical issues of students during the final exams
 
   
-Skills
+## Skills
 ======
 * Python, C++, HTML, CSS, JavaScript, PHP, C#
 * MySQL, AWS, Git, Ubuntu, FreeBSD, Neural Network
 
 
-Publications
+## Publications
 ======
   <ul>{% for post in site.publications %}
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
   
-Teaching
+## Teaching
 ======
   <ul>{% for post in site.teaching %}
     {% include archive-single-cv.html %}
