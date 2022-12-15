@@ -1,6 +1,6 @@
 ---
 title: "Street light control webpage"
-excerpt: "Street light control webpage<br/><img src='/images/500x300.png'>"
+excerpt: "Street light control webpage<br/><img src='/images/streetlight.jpg'>"
 collection: projects
 ---
 
