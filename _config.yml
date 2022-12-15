@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "The Anh Hoang"
+title                    : "Hoàng Thế Anh"
 title_separator          : "-"
 name                     : &name "The Anh Hoang"
 description              : &description "personal description"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "Hoàng Thế Anh"
+  name             : "The Anh Hoang"
   avatar           : "githubprofile.jpg"
   bio              : "PhD Scholar | Intelligent Transport Systems"
   location         : 
