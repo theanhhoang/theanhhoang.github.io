@@ -3,7 +3,7 @@ title: "A joint trajectory planning and signal control framework for a network o
 collection: publications
 permalink: /publication/IEEE-TITS23
 excerpt: ''
-date: 2023-10-01
+date: 2025-10-01
 venue: 'IEEE Transactions on Intelligent Transportation Systems'
 paperurl: ''
 citation: ''

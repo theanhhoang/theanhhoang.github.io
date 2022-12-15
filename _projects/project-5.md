@@ -10,7 +10,7 @@ I developed a demo version of a responsive webpage for the Smart Street Lighting
 * Linux
 * Apache
 * MySQL
-* HMTL, CSS, Javascript, Bootstrap
+* PHP (CodeIgnitor), HMTL, CSS, Javascript, Bootstrap
 
 ## Link
 Due to the conflict of interests with the previous employers, the source code of this project cannot be shared.
