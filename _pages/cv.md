@@ -12,49 +12,47 @@ redirect_from:
 
 Education
 ======
-* Dipl.T. Ontario College Advanced Diploma in Electronics Engineering Technology - Telecommunication, Mohawk College of Applied Arts and Technology, 2007
-* B.A. Combined Honours in Communication Studies, Cultural Studies and Critical Theory, McMaster University, 2010
-* M.P.C. Master of Professional Communication, Ryerson University, 2011
-* M.A. in Work and Society, McMaster University, 2017
-* M.A. in Cultural Studies and Critical Theory, McMaster University, 2019
-* Ph.D. in Information Studies, Media, Technology and Culture Concentration, University of Toronto, (In-Progress)
+* Bachelor of Engineering (Telecommunication and Network) (Honours) (GPA: 3.594), Swinburne University of Technology, 2018
+* Doctor of Philosophy (Transport Engineering), Monash University, (In-Progress)
 
 Work experience
 ======
-* Summer 2021: Research Assistant
-  * University of Toronto
-  * Duties included: Social Media Research on Academic Tiktok
-  * Supervisor: Dr. Sara Grimes
+* Oct 2018 - Feb 2020: Software Engineer- Smart Street Light Project
+  * Foxnite JSC, Ho Chi Minh City, Vietnam
+  * Duties included: 
+    * Designed end-to-end architecture for the Smart Street Lighting system
+    * Developed program for IoT industrial gateway
+    * Project is under large-scale testing in several provinces and industrial zones in Vietnam
 
-* Summer 2021: Research Assistant
-  * University of Toronto
-  * Duties included: Community Liasion at the Critical Digital Humanities Initiative
-  * Supervisor: Dr. Elspeth Brown
- 
-* Winter 2021: Research Assistant
-  * McMaster University
-  * Duties included: Literature Review on Migrant Indians and Foreign Remittance
-  * Supervisor: Dr. Chandrima Chakraborty
- 
- * Fall 2020: Research Assistant
-   * University of Victoria
-   * Duties included: Conference and Colloquium Organizing at the Electronics Textual Cultures Lab
-   * Supervisor: Dr. Ray Siemens
 
- * Summer 2020: Research Assistant
-   * University of Toronto
-   * Duties included: Literature Review on the media genealogy of menticide
-   * Supervisor: Dr. Jeremy Packer
+* Nov 2017 - Feb 2018: Research Intern
+  * I4T Research Group - Swinburne University, Australia
+  * Duties included: 
+    * Investigated vulnerability in OSPF Routing Protocol and executed attacks to OSPF under CORE emulation environment using Python
+    * Produced dataset for further research
+    * Wrote up a technical report of the project
 
- * Winter 2019: Research Assistant
-   * McMaster University
-   * Duties included: Literature Review on Data, Democracy and Dirty tricks
-   * Supervisor: Dr. Henry Giroux
+
+* Nov 2016 - Feb 2017: Research Intern
+  * I4T Research Group - Swinburne University, Australia
+  * Duties included: 
+    * Investigated MP-TCP protocol in FreeBSD
+    * Developed TEACUP tool (in Python) to support MP-TCP experiments
+    * Wrote up a technical report of the project
+
+Other work experience
+======
+
+* Aug 2022 - Current: eExam IT Support
+  * Monash University, Australia
+  * Duties included: 
+    * Troubleshoot technical issues of students during the final exams
+
   
 Skills
 ======
-* Library Carpentries
-* Creative Commons Open Licensing
+* Python, C++, HTML, CSS, JavaScript, PHP, C#
+* MySQL, AWS, Git, Ubuntu, FreeBSD, Neural Network
 * 
 
 Publications
@@ -75,8 +73,4 @@ Teaching
     {% include archive-single-cv.html %}
   {% endfor %}</ul>
   
-Service and leadership
-======
-* Canadian Society for Digital Humanities / Société canadienne des humanités numériques (CSDH/SCHN) Executive Council Graduate Student Representative (2020-2021)
-* Digital Humanities Summer Institute, Conference and Colloquium Co-Chair (2020-present)
 
