@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "THE ANH HOANG"
+title                    : "The Anh Hoang"
 title_separator          : "-"
 name                     : &name "The Anh Hoang"
 description              : &description "personal description"
@@ -80,7 +80,7 @@ analytics:
 
 # Site Author
 author:
-  name             : "The Anh Hoang"
+  name             : "Hoàng Thế Anh"
   avatar           : "githubprofile.jpg"
   bio              : "PhD Scholar | Intelligent Transport Systems"
   location         : 
@@ -180,7 +180,7 @@ collections:
   publications:
     output: true
     permalink: /:collection/:path/
-  portfolio:
+  projects:
     output: true
     permalink: /:collection/:path/
   talks:
@@ -226,10 +226,10 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _portfolio
+  # _projects
   - scope:
       path: ""
-      type: portfolio
+      type: projects
     values:
       layout: single
       author_profile: true
